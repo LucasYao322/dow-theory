@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Noto Serif SC Web";
+  src: url("../fonts/noto-serif-sc-subset.woff") format("woff");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ==========================================================================
    道氏理论 · The Dow Theory
    Editorial reading experience. No frameworks, no external assets.
@@ -20,7 +28,7 @@
   --line: rgba(23, 20, 16, 0.14);
   --line-soft: rgba(23, 20, 16, 0.08);
   --line-strong: rgba(23, 20, 16, 0.32);
-  --serif: "Songti SC", "STSong", "SimSun", "Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC", Georgia, serif;
+  --serif: "Noto Serif SC Web", "Noto Serif SC", "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", "STSong", "SimSun", Georgia, serif;
   --sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
   --mono: "Cascadia Mono", "Consolas", "Microsoft YaHei", "PingFang SC", monospace;
   --max: 1280px;
