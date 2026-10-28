@@ -1573,3 +1573,33 @@
   .spec-theme { padding: 20px; }
   .spec-chapter { grid-template-columns: 26px 1fr auto; }
 }
+
+/* Reminiscences full-text pages */
+.spec-reader {
+  --red: #7a332b;
+  --red-deep: #3b1b18;
+  --red-bright: #954238;
+}
+.spec-reader .chapter-head h1 { font-size: clamp(34px, 4.8vw, 56px); }
+.spec-reading-note {
+  margin: 30px 0 30px;
+  padding: 16px 18px;
+  border-left: 2px solid var(--red);
+  background: rgba(122, 51, 43, 0.045);
+  font-size: 11px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+.spec-reading-note span {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: var(--red);
+}
+.spec-prose > p {
+  font-size: var(--reader-size, 18px);
+  line-height: 2.05;
+}
+.spec-prose .pg { color: var(--muted-2); }
