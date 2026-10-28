@@ -1263,3 +1263,57 @@
 .turtle-landing .site-head .brand-text small { color: var(--muted); }
 .turtle-landing .site-head .main-nav a { color: var(--ink-2); }
 .turtle-landing .site-head .head-cta { border-color: var(--ink); color: var(--ink); }
+
+/* Full original text inside Turtle chapter pages */
+.fulltext-jump {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--turtle);
+  border-bottom: 1px solid rgba(47, 74, 61, 0.3);
+  padding-bottom: 2px;
+}
+.fulltext-section {
+  margin-top: 54px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line-strong);
+}
+.fulltext-head span {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--turtle);
+}
+.fulltext-head h2 {
+  margin-top: 8px;
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+.fulltext-head p {
+  margin-top: 10px;
+  max-width: 54ch;
+  font-size: 11px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+.turtle-prose {
+  margin-top: 24px;
+}
+.turtle-prose > p {
+  margin: 1.15em 0;
+}
+.prose-heading {
+  margin: 2.2em 0 0.7em;
+  font-family: var(--serif);
+  font-size: 21px;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+.turtle-prose > p[data-page] .pg {
+  color: var(--muted-2);
+}
