@@ -22,7 +22,7 @@
   --line-strong: rgba(23, 20, 16, 0.32);
   --serif: "Songti SC", "STSong", "SimSun", "Noto Serif CJK SC", "Source Han Serif SC", "Noto Serif SC", Georgia, serif;
   --sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
-  --mono: "SFMono-Regular", "Cascadia Mono", "Consolas", monospace;
+  --mono: "Cascadia Mono", "Consolas", "Microsoft YaHei", "PingFang SC", monospace;
   --max: 1280px;
   --read: 760px;
   --ease: cubic-bezier(0.22, 0.72, 0.18, 1);
@@ -56,7 +56,6 @@ body {
   font-family: var(--sans);
   font-size: 16px;
   line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
@@ -198,7 +197,7 @@ svg {
 .brand-text small {
   margin-top: 2px;
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.18em;
   color: var(--muted);
 }
@@ -325,7 +324,7 @@ body.nav-open .menu-btn span:last-child {
 
 .section-no {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11.5px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--red);
@@ -517,7 +516,7 @@ body.nav-open .menu-btn span:last-child {
   align-items: center;
   gap: 14px;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.18em;
   color: var(--muted);
 }
@@ -571,7 +570,7 @@ body.nav-open .menu-btn span:last-child {
   align-items: center;
   gap: 1px;
   font-family: var(--serif);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.15;
   letter-spacing: 0.1em;
   transform: rotate(-7deg);
@@ -582,7 +581,7 @@ body.nav-open .menu-btn span:last-child {
   margin-top: 18px;
   padding-left: 4px;
   font-family: var(--serif);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.52em;
   color: var(--muted);
 }
@@ -616,7 +615,7 @@ body.nav-open .menu-btn span:last-child {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 40px;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.06em;
   color: var(--muted);
 }
@@ -643,7 +642,7 @@ body.nav-open .menu-btn span:last-child {
   padding: 11px 16px;
   border: 1px solid var(--line);
   background: rgba(255, 252, 244, 0.5);
-  font-size: 11px;
+  font-size: 12px;
   transition: border-color 0.3s, background 0.3s;
 }
 
@@ -654,7 +653,7 @@ body.nav-open .menu-btn span:last-child {
 
 .continue-pill .cp-label {
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.15em;
   color: var(--red);
 }
@@ -705,7 +704,7 @@ body.nav-open .menu-btn span:last-child {
 
 .panel-kicker {
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.18em;
   color: var(--muted);
 }
@@ -738,7 +737,7 @@ body.nav-open .menu-btn span:last-child {
 
 .panel-stamp small {
   font-family: var(--mono);
-  font-size: 5px;
+  font-size: 8px;
   letter-spacing: 0.1em;
   margin-top: 2px;
 }
@@ -768,14 +767,14 @@ body.nav-open .menu-btn span:last-child {
 
 .pi-unit {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
 
 .pi-drop {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11.5px;
   color: var(--red);
   border: 1px solid rgba(169, 59, 42, 0.28);
   padding: 2px 6px;
@@ -783,7 +782,7 @@ body.nav-open .menu-btn span:last-child {
 }
 
 .panel-caption {
-  font-size: 9px;
+  font-size: 11px;
   color: var(--muted);
   letter-spacing: 0.03em;
 }
@@ -837,7 +836,7 @@ body.nav-open .menu-btn span:last-child {
 
 .hc-marker text {
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.04em;
   fill: var(--red);
 }
@@ -845,7 +844,7 @@ body.nav-open .menu-btn span:last-child {
 .hc-axis text,
 .hc-legend text {
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.08em;
   fill: var(--muted);
 }
@@ -896,7 +895,7 @@ body.nav-open .menu-btn span:last-child {
   padding-top: 10px;
   border-top: 1px solid var(--line);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
@@ -906,13 +905,13 @@ body.nav-open .menu-btn span:last-child {
   align-items: center;
   gap: 10px;
   margin: 18px 0 0 22px;
-  font-size: 10px;
+  font-size: 11.5px;
   color: var(--muted);
 }
 
 .hero-side-note span {
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.12em;
   color: var(--red);
   border: 1px solid rgba(169, 59, 42, 0.25);
@@ -927,7 +926,7 @@ body.nav-open .menu-btn span:last-child {
   align-items: center;
   gap: 12px;
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.22em;
   color: var(--muted);
 }
@@ -999,7 +998,7 @@ body.nav-open .menu-btn span:last-child {
   display: block;
   margin-top: 26px;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.14em;
   color: var(--muted);
   font-style: normal;
@@ -1051,7 +1050,7 @@ body.nav-open .menu-btn span:last-child {
 .p-no {
   display: block;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.18em;
   color: var(--red);
 }
@@ -1078,7 +1077,7 @@ body.nav-open .menu-btn span:last-child {
   right: 28px;
   bottom: 22px;
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.18em;
   color: var(--muted-2);
 }
@@ -1181,12 +1180,12 @@ body.nav-open .menu-btn span:last-child {
 
 .move-tab span {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.12em;
 }
 
 .move-tab small {
-  font-size: 10px;
+  font-size: 11.5px;
   letter-spacing: 0.06em;
   color: var(--muted-2);
 }
@@ -1212,7 +1211,7 @@ body.nav-open .menu-btn span:last-child {
 
 .move-kicker {
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.18em;
   color: var(--red);
 }
@@ -1314,14 +1313,14 @@ body.nav-open .menu-btn span:last-child {
 
 .mv-labels text {
   font-family: var(--sans);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   fill: var(--paper);
 }
 
 .mv-labels text.sub {
   font-family: var(--mono);
-  font-size: 6px;
+  font-size: 8.5px;
   letter-spacing: 0.16em;
   fill: var(--muted);
 }
@@ -1338,14 +1337,14 @@ body.nav-open .menu-btn span:last-child {
 
 .mv-axis text {
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.12em;
   fill: var(--muted-2);
 }
 
 .figure-caption {
   margin-top: 14px;
-  font-size: 10px;
+  font-size: 11.5px;
   line-height: 1.7;
   color: var(--muted-2);
 }
@@ -1373,7 +1372,7 @@ body.nav-open .menu-btn span:last-child {
   position: relative;
   padding: 8px 0;
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 11.5px;
   letter-spacing: 0.14em;
   color: var(--muted);
 }
@@ -1446,20 +1445,20 @@ body.nav-open .menu-btn span:last-child {
 
 .ph-labels text.num {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   fill: var(--red);
 }
 
 .ph-labels text.sub {
   font-family: var(--sans);
-  font-size: 9px;
+  font-size: 11px;
   fill: var(--muted);
 }
 
 .ph-axis text {
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.12em;
   fill: var(--muted-2);
 }
@@ -1487,7 +1486,7 @@ body.nav-open .menu-btn span:last-child {
 
 .phase-card > span {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.14em;
   color: var(--red);
 }
@@ -1511,7 +1510,7 @@ body.nav-open .menu-btn span:last-child {
   padding-top: 12px;
   border-top: 1px solid var(--line-soft);
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.1em;
   color: var(--muted-2);
 }
@@ -1567,7 +1566,7 @@ body.nav-open .menu-btn span:last-child {
 
 .cp-label {
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.16em;
   color: var(--muted-2);
 }
@@ -1611,7 +1610,7 @@ body.nav-open .menu-btn span:last-child {
 }
 
 .cf-note {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.04em;
 }
 
@@ -1625,7 +1624,7 @@ body.nav-open .menu-btn span:last-child {
 
 .cf-legend text {
   font-family: var(--sans);
-  font-size: 8px;
+  font-size: 10.5px;
   fill: var(--muted);
 }
 
@@ -1648,7 +1647,7 @@ body.nav-open .menu-btn span:last-child {
 
 .cr-label {
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.14em;
   color: var(--red);
 }
@@ -1712,13 +1711,13 @@ body.nav-open .menu-btn span:last-child {
 
 .cc-no {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   color: var(--red);
 }
 
 .cc-tag {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   color: var(--muted);
 }
@@ -1734,7 +1733,7 @@ body.nav-open .menu-btn span:last-child {
 
 .chapter-card p {
   margin-top: 10px;
-  font-size: 11.5px;
+  font-size: 12.5px;
   line-height: 1.8;
   color: var(--muted);
   display: -webkit-box;
@@ -1750,7 +1749,7 @@ body.nav-open .menu-btn span:last-child {
   justify-content: space-between;
   align-items: center;
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.08em;
   color: var(--muted-2);
 }
@@ -1870,7 +1869,7 @@ body.nav-open .menu-btn span:last-child {
 
 .g-item figcaption span {
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.16em;
   color: var(--red);
 }
@@ -1885,13 +1884,13 @@ body.nav-open .menu-btn span:last-child {
 .g-item figcaption small {
   margin-left: auto;
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   color: var(--muted-2);
 }
 
 .gallery-note {
   margin-top: 22px;
-  font-size: 10px;
+  font-size: 11.5px;
   color: var(--muted-2);
 }
 
@@ -1956,7 +1955,7 @@ body.nav-open .menu-btn span:last-child {
 
 .tl-item p {
   margin-top: 8px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.8;
   color: var(--muted);
 }
@@ -1999,7 +1998,7 @@ body.nav-open .menu-btn span:last-child {
 .about-cover figcaption {
   margin-top: 14px;
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.1em;
   color: var(--muted);
   text-align: center;
@@ -2038,7 +2037,7 @@ body.nav-open .menu-btn span:last-child {
 .about-facts span {
   display: block;
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.14em;
   color: var(--muted-2);
 }
@@ -2082,7 +2081,7 @@ body.nav-open .menu-btn span:last-child {
 
 .cta-kicker {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.22em;
   color: rgba(243, 238, 226, 0.5);
 }
@@ -2117,7 +2116,7 @@ body.nav-open .menu-btn span:last-child {
 
 .cta-links a {
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.08em;
   color: rgba(243, 238, 226, 0.62);
   transition: color 0.25s;
@@ -2154,7 +2153,7 @@ body.nav-open .menu-btn span:last-child {
 
 .footer-note {
   margin-top: 20px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.9;
   color: rgba(243, 238, 226, 0.42);
 }
@@ -2174,13 +2173,13 @@ body.nav-open .menu-btn span:last-child {
 .footer-links span {
   margin-bottom: 4px;
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.16em;
   color: rgba(243, 238, 226, 0.32);
 }
 
 .footer-links a {
-  font-size: 11px;
+  font-size: 12px;
   color: rgba(243, 238, 226, 0.58);
   transition: color 0.25s;
 }
@@ -2197,7 +2196,7 @@ body.nav-open .menu-btn span:last-child {
   padding-top: 18px;
   border-top: 1px solid rgba(243, 238, 226, 0.12);
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.12em;
   color: rgba(243, 238, 226, 0.3);
 }
@@ -2281,7 +2280,7 @@ dialog::backdrop {
 
 .search-field kbd {
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.1em;
   color: var(--muted-2);
   border: 1px solid var(--line);
@@ -2313,7 +2312,7 @@ dialog::backdrop {
   padding: 10px 22px;
   border-bottom: 1px solid var(--line-soft);
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.1em;
   color: var(--muted-2);
 }
@@ -2337,7 +2336,7 @@ dialog::backdrop {
 
 .search-empty p {
   margin-top: 10px;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .search-result {
@@ -2359,7 +2358,7 @@ dialog::backdrop {
 
 .sr-no {
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   color: var(--red);
   letter-spacing: 0.1em;
 }
@@ -2373,13 +2372,13 @@ dialog::backdrop {
 .sr-page {
   margin-left: auto;
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   color: var(--muted-2);
 }
 
 .sr-text {
   margin-top: 5px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.8;
   color: var(--muted);
   display: -webkit-box;
@@ -2423,7 +2422,7 @@ dialog::backdrop {
 }
 
 .lightbox p {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.06em;
   color: rgba(243, 238, 226, 0.62);
 }
@@ -2503,7 +2502,7 @@ dialog::backdrop {
   margin-left: auto;
   margin-right: auto;
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.12em;
   color: var(--muted);
 }
@@ -2522,7 +2521,7 @@ dialog::backdrop {
 }
 
 .reader-back {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.08em;
   padding: 8px 12px;
   border: 1px solid var(--line);
@@ -2587,7 +2586,7 @@ dialog::backdrop {
 
 .side-label {
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.18em;
   color: var(--muted-2);
   padding-bottom: 12px;
@@ -2604,7 +2603,7 @@ dialog::backdrop {
   display: flex;
   gap: 9px;
   padding: 5px 0;
-  font-size: 10.5px;
+  font-size: 12px;
   line-height: 1.5;
   color: var(--muted);
   transition: color 0.2s, transform 0.2s;
@@ -2612,7 +2611,7 @@ dialog::backdrop {
 
 .toc-item span {
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   color: var(--muted-2);
   padding-top: 2px;
 }
@@ -2638,7 +2637,7 @@ dialog::backdrop {
 
 .side-progress-label {
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.12em;
   color: var(--muted-2);
 }
@@ -2657,7 +2656,7 @@ dialog::backdrop {
 }
 
 .side-foot a {
-  font-size: 9px;
+  font-size: 11px;
   color: var(--muted);
   letter-spacing: 0.06em;
 }
@@ -2677,7 +2676,7 @@ dialog::backdrop {
   flex-wrap: wrap;
   gap: 8px;
   font-family: var(--mono);
-  font-size: 7.5px;
+  font-size: 10px;
   letter-spacing: 0.13em;
   text-transform: uppercase;
   color: var(--muted);
@@ -2710,7 +2709,7 @@ dialog::backdrop {
   gap: 18px;
   margin-top: 20px;
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.08em;
   color: var(--muted-2);
 }
@@ -2752,7 +2751,7 @@ dialog::backdrop {
 
 .kb-head span {
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.16em;
   color: var(--red);
 }
@@ -2821,7 +2820,7 @@ dialog::backdrop {
   margin-top: 16px;
   padding-left: 34px;
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.1em;
   color: var(--muted);
   font-style: normal;
@@ -2840,7 +2839,7 @@ dialog::backdrop {
 
 .dn-no {
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.14em;
   color: var(--red);
 }
@@ -2852,7 +2851,7 @@ dialog::backdrop {
 
 .data-note p {
   margin-top: 4px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.8;
   color: var(--muted);
 }
@@ -2903,7 +2902,7 @@ dialog::backdrop {
   width: 46px;
   text-align: right;
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.04em;
   color: var(--muted-2);
   opacity: 0;
@@ -2918,7 +2917,7 @@ dialog::backdrop {
   margin-top: 60px;
   padding-top: 22px;
   border-top: 1px solid var(--line);
-  font-size: 10px;
+  font-size: 11.5px;
   line-height: 1.9;
   color: var(--muted);
 }
@@ -2965,7 +2964,7 @@ dialog::backdrop {
 .cn-prev span,
 .cn-next span {
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.14em;
   color: var(--muted-2);
 }
@@ -3012,7 +3011,7 @@ dialog::backdrop {
   min-width: 44px;
   padding: 6px 7px;
   border-radius: 14px;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.25;
   letter-spacing: 0.04em;
   color: rgba(243, 238, 226, 0.75);
@@ -3029,7 +3028,7 @@ dialog::backdrop {
 }
 
 .rt-text {
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.06em;
   white-space: nowrap;
 }
@@ -3064,7 +3063,7 @@ dialog::backdrop {
 
 .scan-label {
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: 9.5px;
   letter-spacing: 0.18em;
   color: var(--red);
 }
@@ -3110,7 +3109,7 @@ dialog::backdrop {
 .scan-loader {
   position: absolute;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   color: rgba(243, 238, 226, 0.55);
 }
@@ -3145,7 +3144,7 @@ dialog::backdrop {
   padding: 12px 20px;
   background: var(--paper);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 10.5px;
   letter-spacing: 0.08em;
   color: var(--muted);
 }
@@ -3357,14 +3356,14 @@ body.theme-dark .pg {
 
   .hero { padding-top: 100px; }
   .hero h1 { font-size: clamp(64px, 22vw, 100px); }
-  .seal { width: 54px; height: 54px; font-size: 9px; right: 0; top: -14px; }
+  .seal { width: 54px; height: 54px; font-size: 11px; right: 0; top: -14px; }
   .lead { font-size: 15px; line-height: 1.95; }
   .hero-actions { flex-wrap: wrap; }
   .btn { height: 46px; padding: 0 20px; font-size: 12px; }
-  .hero-meta { gap: 8px; font-size: 10px; }
+  .hero-meta { gap: 8px; font-size: 11.5px; }
   .hero-panel { padding: 20px 18px 16px; transform: none; }
   .pi-value { font-size: 45px; }
-  .panel-foot { font-size: 7px; }
+  .panel-foot { font-size: 9.5px; }
   .hero-side-note { margin-left: 0; }
 
   .section { padding: 70px 0; }
@@ -3400,7 +3399,7 @@ body.theme-dark .pg {
 
   .search-dialog { margin-top: 4vh; }
   .search-field input { font-size: 16px; }
-  .search-meta { font-size: 6px; }
+  .search-meta { font-size: 8.5px; }
 
   .reader-shell { width: calc(100vw - 32px); padding-top: 92px; }
   .reader-head { height: 60px; }
@@ -3426,3 +3425,28 @@ body.theme-dark .pg {
   .lightbox { padding: 18px; }
   .lightbox img { max-width: 94vw; max-height: 76vh; }
 }
+
+/* Readability pass: small labels stay small, but no longer hairline-thin. */
+.phase-tab {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.phase-hint {
+  font-family: var(--sans);
+  font-size: 13.5px;
+}
+.big-quote cite,
+.pullquote cite {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+/* Key reading metadata: one more step up for Chinese glyphs. */
+.chapter-meta { font-size: 11.5px; }
+.chapter-eyebrow { font-size: 10.5px; }
+.key-box li { font-size: 13px; line-height: 1.85; }
+.kb-head span { font-size: 10px; }
+.toc-item { font-size: 12.5px; }
