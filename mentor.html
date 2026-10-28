@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>交易导师 v0 · 交易前检查清单</title>
+<meta name="description" content="把道氏理论与海龟交易法则变成一张交易前检查清单。">
+<meta name="theme-color" content="#1c3027">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%231c3027'/><text x='32' y='45' font-size='40' text-anchor='middle' fill='%23f3eee2' font-family='serif'>龟</text></svg>">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/books.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.menu-btn,.reader-menu-btn{display:none!important}</style></noscript>
+</head>
+<body class="library-page">
+<div class="grain" aria-hidden="true"></div>
+<header class="site-head" id="siteHead">
+  <div class="head-inner">
+    <a class="brand" href="library.html" aria-label="交易书库">
+  <span class="brand-mark">书</span>
+  <span class="brand-text"><strong>交易书库</strong><small>TRADING LIBRARY</small></span>
+</a>
+    <nav class="main-nav" aria-label="书库导航"><a href="index.html">道氏理论</a><a href="turtle/index.html">海龟交易法则</a><a href="mentor.html" style="color:var(--red)">交易导师</a></nav>
+    <div class="head-actions">
+      <a class="head-cta" href="mentor.html">导师 v0</a>
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="mentor-hero">
+  <div class="wrap mentor-hero-grid">
+    <div>
+      <p class="library-kicker">MENTOR V0 / CHECKLIST</p>
+      <h1>交易前，<br>先过一遍<span>检查清单</span>。</h1>
+      <p>它不告诉你该买什么。它只帮你确认：你看的是哪个尺度、证据够不够、错了在哪里退、仓位是否承受得起。</p>
+    </div>
+    <div class="mentor-hero-note"><b>NOT FINANCIAL ADVICE</b>这是一个学习工具，不是荐股系统。它的目标是让你的决策过程更一致，而不是保证每一笔交易都赚钱。</div>
+  </div>
+</section>
+
+<section class="wrap mentor-body">
+  <div class="checklist-head">
+    <div><h2>八问，决定要不要下手。</h2><p>勾选你真正确认过的项目。没有勾完，不代表不能交易，只代表你还有没想清楚的地方。</p></div>
+    <div class="checklist-progress"><span id="checkCount">0 / 8</span><i id="checkBar"></i></div>
+  </div>
+  <div class="checklist" id="checklist"><label class="check-item"><input type="checkbox" data-check="1" id="check1"><span class="check-box"></span><span class="check-copy"><b>我看的是哪个时间尺度？</b><small>日线、周线还是分钟线？不同尺度会给出不同结论。</small></span></label><label class="check-item"><input type="checkbox" data-check="2" id="check2"><span class="check-box"></span><span class="check-copy"><b>主要趋势的方向是什么？</b><small>用高低点结构或 20/55 日通道确认，不凭感觉。</small></span></label><label class="check-item"><input type="checkbox" data-check="3" id="check3"><span class="check-box"></span><span class="check-copy"><b>有独立证据确认吗？</b><small>道氏看两个指数；海龟看突破与波动率。不要只看一个指标。</small></span></label><label class="check-item"><input type="checkbox" data-check="4" id="check4"><span class="check-box"></span><span class="check-copy"><b>这次入场是规则信号，还是害怕错过？</b><small>写下触发条件；写不出来，就不是系统交易。</small></span></label><label class="check-item"><input type="checkbox" data-check="5" id="check5"><span class="check-box"></span><span class="check-copy"><b>如果错了，我在哪里退出？</b><small>先设止损，再计算仓位；不要先买再想。</small></span></label><label class="check-item"><input type="checkbox" data-check="6" id="check6"><span class="check-box"></span><span class="check-copy"><b>这笔交易亏损 2N 时，账户会怎样？</b><small>把风险换算成账户百分比，确认自己能承受。</small></span></label><label class="check-item"><input type="checkbox" data-check="7" id="check7"><span class="check-box"></span><span class="check-copy"><b>我是在买最强，还是在买最便宜？</b><small>趋势系统买强卖弱；价值判断是另一套逻辑。</small></span></label><label class="check-item"><input type="checkbox" data-check="8" id="check8"><span class="check-box"></span><span class="check-copy"><b>如果这笔交易失败，我愿意记录并复盘吗？</b><small>不能复盘的计划，不值得执行。</small></span></label></div>
+  <div class="checklist-action"><button class="checklist-reset" id="checkReset" type="button">清空，重新开始</button></div>
+
+  <section class="mentor-compare">
+    <div class="compare-head">
+      <h2>两本书，看同一件事。</h2>
+      <p>道氏理论更像“读市场”，海龟法则更像“执行系统”。不要把它们混成一套四不像；先决定你今天用的是哪一套。</p>
+    </div>
+    <table class="compare-table"><thead><tr><th>环节</th><th>道氏理论</th><th>海龟交易法则</th></tr></thead><tbody><tr><td>趋势</td><td>高点抬高、低点抬高；两个指数确认。</td><td>20 / 55 日通道突破；价格自己确认。</td></tr><tr><td>入市</td><td>结构确认后，等回调或突破。</td><td>突破当天入市，不提前埋伏。</td></tr><tr><td>仓位</td><td>较少量化，强调风险与耐心。</td><td>1N≈1% 账户；按单位计算。</td></tr><tr><td>加仓</td><td>不是核心议题。</td><td>每 1/2N 加一个单位，最多 4 个。</td></tr><tr><td>止损</td><td>接受小损失，等趋势重新清晰。</td><td>2N，触及即退出。</td></tr><tr><td>离市</td><td>趋势结构被破坏。</td><td>10 / 20 日反向突破。</td></tr><tr><td>执行</td><td>偏判断与阅读。</td><td>限价单、买强卖弱、换月。</td></tr></tbody></table>
+    <div class="mentor-warning"><b>不要混用：</b>用道氏理论判断“趋势还在”，却用海龟的 20 日突破随意入场，会让你在两套逻辑之间来回摇摆。先选一套做主线，另一套只做交叉检查。</div>
+  </section>
+
+  <div class="mentor-next">
+    <a href="library.html"><span>NEXT / 书库</span><b>回到两本书</b><small>道氏理论 · 海龟交易法则</small></a>
+    <a href="turtle/index.html#rules"><span>NEXT / 规则</span><b>看海龟规则速查</b><small>N、单位、突破、止损、离市</small></a>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="brand" href="library.html" aria-label="交易书库">
+  <span class="brand-mark">书</span>
+  <span class="brand-text"><strong>交易书库</strong><small>TRADING LIBRARY</small></span>
+</a>
+      <p class="footer-note">把书读成原则，把原则变成检查清单。<br>公开版仅含导读、规则提炼与短引文。</p>
+    </div>
+    <div class="footer-links">
+      <div><span>书库</span><a href="index.html">道氏理论</a><a href="turtle/index.html">海龟交易法则</a><a href="mentor.html">交易导师</a></div>
+      <div><span>说明</span><a href="index.html#about">关于本站</a><a href="library.html">全部书籍</a></div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom"><span>TRADING LIBRARY · 2026</span><span>Read the rules. Keep a journal.</span></div>
+</footer>
+<script src="assets/js/mentor.js"></script>
+</body>
+</html>

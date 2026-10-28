@@ -1,6 +1,6 @@
-# 道氏理论 · 数字读本
+# 交易书库 · 道氏理论 × 海龟交易法则
 
-把地震出版社 2013 年《道氏理论（珍藏版）》（罗伯特·雷亚 著，刘志刚 译）做成的一个静态阅读网站。
+一个多书阅读与交易原则库：完整收录《道氏理论》，并为《海龟交易法则》建立公开规则导读、跨书对照和交易前检查清单。
 
 ## 打开方式
 
@@ -16,27 +16,37 @@ python -m http.server 8000
 
 ## 内容
 
-- 首页：理论精要、三种运动、牛熊三阶段、双指数确认、时间线、原书图谱。
-- 19 个章节页：章节导读、要点、金句、完整正文、原书影印对照。
-- 全文搜索：首页右上角放大镜，或按 `/`；结果可直接跳到具体段落。
+- 首页：道氏理论全书入口，以及“书库”导航。
+- `library.html`：交易书库，两本书的入口与导师 v0。
+- `read/ch01.html … ch19.html`：道氏理论 19 章全文、导读、原书影印。
+- `turtle/`：海龟交易法则 9 章规则导读、规则速查表。
+- `mentor.html`：跨书对照 + 交易前检查清单（本地保存勾选状态）。
+- 全文搜索：道氏首页右上角放大镜，或按 `/`；结果可直接跳到具体段落。
 - 阅读工具：字号调整、夜间模式、章节收藏、阅读进度、上一章 / 下一章。
-- 原书影印：每章工具栏的“影印”按钮，可逐页翻阅对应章节的扫描页。
 
 ## 文件结构
 
 ```text
 site/
-├─ index.html                 首页
-├─ read/ch01.html … ch19.html 章节阅读页
+├─ index.html                 道氏理论首页
+├─ library.html               交易书库
+├─ mentor.html                交易前检查清单
+├─ read/ch01.html … ch19.html 道氏理论章节
+├─ turtle/                    海龟交易法则规则导读
 ├─ assets/
-│  ├─ css/site.css            全站样式（颜色、字体、布局都在这里）
+│  ├─ css/site.css            全站基础样式
+│  ├─ css/books.css           书库、海龟、导师样式
 │  ├─ js/main.js              首页交互
 │  ├─ js/reader.js            阅读页交互
-│  ├─ js/search-data.js       全文搜索索引
-│  ├─ img/cover.webp          封面
-│  └─ pages/001.webp … 183.webp 原书影印
-└─ data/chapters.json         章节元数据
+│  ├─ js/mentor.js            检查清单
+│  ├─ js/search-data.js       道氏全文搜索索引
+│  ├─ fonts/                  Noto Serif SC 子集
+│  ├─ img/cover.webp          道氏理论封面
+│  └─ pages/001.webp … 183.webp 道氏原书影印
+└─ data/chapters.json         道氏章节元数据
 ```
+
+《海龟交易法则》的完整抽取文本保存在项目根目录的 `../library/turtle.json`，**不在本站公开目录中**，也不会上传到 GitHub Pages。
 
 ## 说明
 
@@ -47,6 +57,7 @@ site/
 
 ## 修改
 
-- 颜色、字体、间距：`assets/css/site.css` 顶部的 `:root` 变量。
-- 章节导读、要点、金句：`../tools/build_site.py` 里的 `META`，修改后在项目根目录运行 `python tools/build_site.py` 重新生成页面。
-- 正文文本：`../work/chapters_raw.json`（由 `tools/extract_text.py` 从 OCR 结果生成）。
+- 颜色、字体、间距：`assets/css/site.css` 和 `assets/css/books.css`。
+- 道氏章节：`../tools/build_site.py` 里的 `META`，修改后运行 `python tools/build_site.py`。
+- 海龟导读、书库、导师页：`../tools/build_turtle.py`，修改后运行 `python tools/build_turtle.py`。
+- 道氏正文：`../work/chapters_raw.json`；海龟完整文本：`../library/turtle.json`（私有）。
