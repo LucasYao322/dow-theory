@@ -17,10 +17,7 @@ python -m http.server 8000
 ## 内容
 
 - 首页：道氏理论全书入口，以及“书库”导航。
-- `library.html`：交易书库，三本书的入口与导师 v0。
-- `learn.html`：学习中心，三条路径、12 个课时与学习进度。
-- `practice.html`：6 个情境决策演练。
-- `journal.html`：交易日志，记录理由、止损、R 倍数与复盘（本地保存）。
+- `library.html`：交易书库，两本书的入口与导师 v0。
 - `read/ch01.html … ch19.html`：道氏理论 19 章全文、导读、原书影印。
 - `turtle/`：海龟交易法则 9 章全文、规则导读、规则速查表与原书 PDF 下载。
 - `speculator/`：股票大作手回忆录的 24 章全文、6 个主题与附录。
@@ -34,9 +31,6 @@ python -m http.server 8000
 site/
 ├─ index.html                 道氏理论首页
 ├─ library.html               交易书库
-├─ learn.html                 学习中心
-├─ practice.html              决策演练
-├─ journal.html               交易日志
 ├─ mentor.html                交易前检查清单
 ├─ read/ch01.html … ch19.html 道氏理论章节
 ├─ turtle/                    海龟交易法则全文与规则导读
