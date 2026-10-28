@@ -18,7 +18,7 @@ python -m http.server 8000
 
 - 首页：道氏理论全书入口，以及“书库 / 概念”导航。
 - `library.html`：交易书库，三本书的入口与导师 v0。
-- `concepts.html`：跨书概念索引，按“止损 / 趋势确认 / 仓位”等 8 个概念对照三本书，并全文检索。
+- `concepts.html`：跨书概念索引，按“止损 / 趋势确认 / 仓位”等 8 个概念对照三本书，支持全文检索与本地语义检索。
 - `read/ch01.html … ch19.html`：道氏理论 19 章全文、导读、原书影印。
 - `turtle/`：海龟交易法则 9 章全文、规则导读、规则速查表与原书 PDF 下载。
 - `speculator/`：股票大作手回忆录的 24 章全文、6 个主题与附录。
@@ -41,7 +41,11 @@ site/
 │  ├─ css/site.css            全站基础样式
 │  ├─ css/books.css           书库、海龟、导师、概念索引样式
 │  ├─ js/concept-data.js      三本书的检索语料
-│  ├─ js/concepts.js          概念索引搜索与对照
+│  ├─ js/concepts.js          概念索引、关键词与语义搜索
+│  ├─ js/transformers.min.js  浏览器端向量模型运行时
+│  ├─ js/ort-wasm-simd.wasm   ONNX Runtime Web WASM
+│  ├─ models/bge-small-zh/    中文向量模型（约 24MB）
+│  ├─ semantic-vectors.bin    1678 段正文的向量索引
 │  ├─ js/main.js              首页交互
 │  ├─ js/reader.js            阅读页交互
 │  ├─ js/mentor.js            检查清单
@@ -66,5 +70,6 @@ site/
 - 颜色、字体、间距：`assets/css/site.css` 和 `assets/css/books.css`。
 - 道氏章节：`../tools/build_site.py` 里的 `META`，修改后运行 `python tools/build_site.py`。
 - 海龟导读、书库、导师页：`../tools/build_turtle.py`，修改后运行 `python tools/build_turtle.py`。
-- 概念索引：先运行 `python tools/build_concepts_page.py`（会调用 `build_concepts.py` 生成语料和页面）。
+- 概念索引：先运行 `python tools/build_concepts_page.py`（会调用 `build_concepts.py` 生成语料和页面），再运行 `python tools/build_embeddings.py` 更新语义向量。
+- 语义模型与 WASM 运行时体积约 34MB，首次点“启用语义搜索”时才加载；不启用时只走关键词检索。
 - 道氏正文：`../work/chapters_raw.json`；海龟全文：`../library/turtle_full.json`；大作手 OCR：`../library/speculator.json`。
