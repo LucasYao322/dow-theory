@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>交易日志 · 交易书库</title>
+<meta name="description" content="记录交易理由、止损、结果与复盘。">
+<meta name="theme-color" content="#1c3027">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%231c3027'/><text x='32' y='45' font-size='40' text-anchor='middle' fill='%23f3eee2' font-family='serif'>龟</text></svg>">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/books.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.menu-btn,.reader-menu-btn{display:none!important}</style></noscript>
+</head>
+<body class="library-page journal-page">
+<div class="grain" aria-hidden="true"></div>
+<header class="site-head" id="siteHead">
+  <div class="head-inner">
+    <a class="brand" href="library.html" aria-label="交易书库">
+  <span class="brand-mark">书</span>
+  <span class="brand-text"><strong>交易书库</strong><small>TRADING LIBRARY</small></span>
+</a>
+    <nav class="main-nav" aria-label="主导航"><a href="library.html">书库</a><a href="learn.html">学习</a><a href="practice.html">演练</a><a href="journal.html" style="color:var(--red)">日志</a><a href="mentor.html">导师</a></nav>
+    <div class="head-actions">
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="journal-hero">
+  <div class="wrap">
+    <p class="library-kicker">TRADE JOURNAL / 记录与复盘</p>
+    <h1>交易<span>日志</span></h1>
+    <p>记录你的判断，而不是只记录盈亏。每一笔交易都写下理由、止损、结果和情绪；几周后，你会看到自己反复犯的是哪一种错。</p>
+  </div>
+</section>
+<section class="wrap journal-body">
+  <div class="journal-stats">
+    <div class="journal-stat"><span>TRADES</span><b id="statCount">0</b></div>
+    <div class="journal-stat"><span>WIN RATE</span><b id="statWin">—</b></div>
+    <div class="journal-stat"><span>AVG R</span><b id="statR">—</b></div>
+  </div>
+  <div class="journal-layout">
+    <div class="journal-form-box">
+      <h2>记录一笔交易</h2>
+      <form class="journal-form" id="journalForm">
+        <div class="field"><label for="jDate">日期</label><input id="jDate" type="date" required></div>
+        <div class="field"><label for="jMarket">市场</label><input id="jMarket" type="text" placeholder="A股 / 美股 / 期货" required></div>
+        <div class="field"><label for="jSymbol">标的</label><input id="jSymbol" type="text" placeholder="代码或名称" required></div>
+        <div class="field"><label for="jDir">方向</label><select id="jDir"><option value="long">做多</option><option value="short">做空</option></select></div>
+        <div class="field"><label for="jEntry">入场价</label><input id="jEntry" type="number" step="any" required></div>
+        <div class="field"><label for="jStop">止损价</label><input id="jStop" type="number" step="any" required></div>
+        <div class="field"><label for="jExit">离场价</label><input id="jExit" type="number" step="any" required></div>
+        <div class="field"><label for="jSize">数量</label><input id="jSize" type="number" step="any" required></div>
+        <div class="field full"><label for="jReason">交易理由 / 触发规则</label><textarea id="jReason" placeholder="为什么进场？哪条规则？"></textarea></div>
+        <div class="field full"><label for="jReview">复盘</label><textarea id="jReview" placeholder="哪一步是规则，哪一步是临时起意？"></textarea></div>
+        <button class="btn btn-primary journal-submit" type="submit">保存到本地</button>
+      </form>
+      <p class="journal-note">数据只保存在当前浏览器 localStorage，不会上传到服务器。换设备或清理浏览器数据会丢失，建议定期导出 JSON。</p>
+    </div>
+    <div class="journal-list">
+      <div class="journal-toolbar"><h2>交易记录</h2><button class="journal-export" id="exportBtn" type="button">导出 JSON</button></div>
+      <div id="journalTable"></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="brand" href="library.html" aria-label="交易书库">
+  <span class="brand-mark">书</span>
+  <span class="brand-text"><strong>交易书库</strong><small>TRADING LIBRARY</small></span>
+</a>
+      <p class="footer-note">把书读成原则，把原则变成检查清单。<br>三本书的正文、规则与导读，正在整理成一套可检索的交易知识库。</p>
+    </div>
+    <div class="footer-links">
+      <div><span>平台</span><a href="library.html">书库</a><a href="learn.html">学习中心</a><a href="practice.html">决策演练</a><a href="journal.html">交易日志</a></div>
+      <div><span>说明</span><a href="mentor.html">交易导师</a><a href="index.html#about">关于本站</a></div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom"><span>TRADING LIBRARY · 2026</span><span>Read the rules. Keep a journal.</span></div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/journal.js"></script>
+</body>
+</html>

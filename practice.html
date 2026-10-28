@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>决策演练 · 交易书库</title>
+<meta name="description" content="用六个情境题检验道氏、海龟与利弗莫尔的原则。">
+<meta name="theme-color" content="#1c3027">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%231c3027'/><text x='32' y='45' font-size='40' text-anchor='middle' fill='%23f3eee2' font-family='serif'>龟</text></svg>">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/books.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.menu-btn,.reader-menu-btn{display:none!important}</style></noscript>
+</head>
+<body class="library-page practice-page">
+<div class="grain" aria-hidden="true"></div>
+<header class="site-head" id="siteHead">
+  <div class="head-inner">
+    <a class="brand" href="library.html" aria-label="交易书库">
+  <span class="brand-mark">书</span>
+  <span class="brand-text"><strong>交易书库</strong><small>TRADING LIBRARY</small></span>
+</a>
+    <nav class="main-nav" aria-label="主导航"><a href="library.html">书库</a><a href="learn.html">学习</a><a href="practice.html" style="color:var(--red)">演练</a><a href="journal.html">日志</a><a href="mentor.html">导师</a></nav>
+    <div class="head-actions">
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="practice-hero">
+  <div class="wrap">
+    <p class="library-kicker">DECISION DRILL / 情境判断</p>
+    <h1>先别下单，<span>先做六道题。</span></h1>
+    <p>这些题没有实时行情，也不预测涨跌。它们只检查一件事：当书本原则遇到具体情境时，你会不会用。</p>
+  </div>
+</section>
+<section class="wrap practice-body">
+  <div class="practice-layout">
+    <div class="scenario-card">
+      <div class="scenario-top"><span id="scenarioTag">—</span><small id="scenarioNo">1 / 6</small></div>
+      <h2 id="scenarioQ">正在载入题目…</h2>
+      <p class="scenario-text" id="scenarioText"></p>
+      <div class="options" id="options"></div>
+      <div class="feedback" id="feedback"><b id="fbTitle"></b><p id="fbText"></p><cite id="fbSrc"></cite></div>
+      <div class="practice-actions">
+        <a class="text-link" href="learn.html">← 返回学习中心</a>
+        <button class="btn btn-primary" id="nextBtn" type="button" disabled>下一题 →</button>
+      </div>
+    </div>
+    <aside class="practice-side">
+      <span>YOUR SCORE</span>
+      <div class="practice-score" id="score">0 / 6</div>
+      <p>每题只有一个最符合书本原则的选项。答错不扣分，但会显示对应原文。</p>
+      <div class="side-progress"><i id="practiceBar"></i></div>
+      <p style="margin-top:14px">最佳成绩：<b id="bestScore">—</b></p>
+    </aside>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="brand" href="library.html" aria-label="交易书库">
+  <span class="brand-mark">书</span>
+  <span class="brand-text"><strong>交易书库</strong><small>TRADING LIBRARY</small></span>
+</a>
+      <p class="footer-note">把书读成原则，把原则变成检查清单。<br>三本书的正文、规则与导读，正在整理成一套可检索的交易知识库。</p>
+    </div>
+    <div class="footer-links">
+      <div><span>平台</span><a href="library.html">书库</a><a href="learn.html">学习中心</a><a href="practice.html">决策演练</a><a href="journal.html">交易日志</a></div>
+      <div><span>说明</span><a href="mentor.html">交易导师</a><a href="index.html#about">关于本站</a></div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom"><span>TRADING LIBRARY · 2026</span><span>Read the rules. Keep a journal.</span></div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script>window.PRACTICE = [{"tag": "道氏 · 确认", "q": "工业指数刚刚创出新高，铁路指数却没有跟上，还在前高之下。你会怎么做？", "text": "你看的是日线主要趋势，两个指数都在长期均线之上。今天工业指数突破了 3 个月新高，铁路指数距离前高还差 2%。", "options": ["按工业指数的突破立即做多", "等待铁路指数也确认后再行动", "立即做空，因为铁路指数太弱"], "correct": 1, "exp": "一个指数的新高，若没有另一个指数确认，通常是假象。道氏理论要求两个平均指数同向确认；确认不要求同一天，但方向最终要一致。", "src": "道氏理论 · 第 12 章", "link": "read/ch12.html"}, {"tag": "海龟 · 入市", "q": "系统一出现 20 日突破信号，但上一次 20 日突破是盈利的。按照海龟规则，应该？", "text": "你正在执行系统一。上一次突破触发后盈利，并在 10 日离市时退出。今天价格再次突破 20 日高点。", "options": ["照常买入一个单位", "跳过这次系统一信号，等下一次", "直接满仓四个单位"], "correct": 1, "exp": "系统一的规则是：如果上一次突破已经导致盈利交易，就忽略本次突破信号。这样可以避免在趋势末端反复追高；系统二仍可独立给出 55 日突破信号。", "src": "海龟交易法则 · 第四章", "link": "turtle/ch05.html"}, {"tag": "海龟 · 止损", "q": "你在 28.30 买入一个单位，N=1.20。价格跌到 25.90，正好是 2N 止损位。你会？", "text": "没有任何新消息，市场只是持续下跌。你的系统规则在入场前就已经写好：多头止损设在入场价下方 2N。", "options": ["再等等，等反弹到成本价", "按规则退出，承认这笔交易失败", "向下摊平，再买一个单位"], "correct": 1, "exp": "海龟止损是不可协商的：多头在入场价下方 2N，空头在上方 2N。1N≈1% 账户，2N 止损意味着每个单位约 2% 的账户风险。", "src": "海龟交易法则 · 第五章", "link": "turtle/ch06.html"}, {"tag": "量价 · 回调", "q": "牛市中的一次回调：价格下跌，但成交量明显缩小；随后价格重新上升，成交量放大。更合理的解读是？", "text": "主要趋势仍向上，两个指数都没有跌破前一次级反应低点。回调持续了 12 个交易日。", "options": ["趋势已经反转，应该清仓", "这是健康的次级回调，趋势可能继续", "成交量不重要，只看价格"], "correct": 1, "exp": "牛市中回调缩量、反弹放量，通常说明卖压衰竭、买盘恢复。成交量是次级证据，但和趋势结构、两个指数确认放在一起，能提高判断质量。", "src": "道氏理论 · 第 15 章", "link": "read/ch15.html"}, {"tag": "大作手 · 消息", "q": "一位“内部人士”告诉你某只股票下周会被收购，让你赶紧买。你的系统没有给出信号。你会？", "text": "消息听起来很具体，但无法验证；股价已经提前上涨了 15%。你的交易规则要求：只在规则信号出现时入场。", "options": ["重仓买入，消息难得", "忽略消息，等自己的规则信号", "先买一半，赌消息是真的"], "correct": 1, "exp": "利弗莫尔反复提醒：不要依赖贴士和内部消息。消息传到散户耳朵里时，往往已经被定价；更糟的是，你把退出按钮交给了别人。", "src": "股票大作手回忆录 · 第十六章", "link": "speculator/ch16.html"}, {"tag": "心理 · 连亏", "q": "连续三笔交易止损，你开始怀疑系统。第四笔信号出现，你想把仓位翻倍“一把赚回来”。你会？", "text": "系统在过去 35 年的回测中最大连亏是 8 笔；你的账户回撤仍在可承受范围内。", "options": ["翻倍仓位，尽快回本", "按原计划仓位执行，记录这笔交易", "停止交易，永远离开市场"], "correct": 1, "exp": "连亏是趋势系统的正常成本。加大仓位会把正常回撤变成生存危机。规则的价值，恰恰体现在你不舒服的时候仍然按计划执行。", "src": "海龟交易法则 · 第八章 / 股票大作手回忆录 · 第十章", "link": "turtle/ch09.html"}];</script>
+<script src="assets/js/practice.js"></script>
+</body>
+</html>
