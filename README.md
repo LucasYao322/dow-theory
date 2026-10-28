@@ -1,6 +1,6 @@
 # 交易书库 · 道氏理论 × 海龟交易法则
 
-一个多书阅读与交易原则库：收录《道氏理论》与《海龟交易法则》全文、规则导读、跨书对照和交易前检查清单。
+一个多书阅读与交易原则库：收录《道氏理论》《海龟交易法则》全文，并为《股票大作手回忆录》建立导读、主题卡与跨书对照。
 
 ## 打开方式
 
@@ -20,7 +20,8 @@ python -m http.server 8000
 - `library.html`：交易书库，两本书的入口与导师 v0。
 - `read/ch01.html … ch19.html`：道氏理论 19 章全文、导读、原书影印。
 - `turtle/`：海龟交易法则 9 章全文、规则导读、规则速查表与原书 PDF 下载。
-- `mentor.html`：跨书对照 + 交易前检查清单（本地保存勾选状态）。
+- `speculator/`：股票大作手回忆录的 6 个主题与 24 章导读。
+- `mentor.html`：三本书对照 + 交易前检查清单（本地保存勾选状态）。
 - 全文搜索：道氏首页右上角放大镜，或按 `/`；结果可直接跳到具体段落。
 - 阅读工具：字号调整、夜间模式、章节收藏、阅读进度、上一章 / 下一章。
 
@@ -33,6 +34,7 @@ site/
 ├─ mentor.html                交易前检查清单
 ├─ read/ch01.html … ch19.html 道氏理论章节
 ├─ turtle/                    海龟交易法则全文与规则导读
+├─ speculator/                股票大作手回忆录导读
 ├─ assets/
 │  ├─ css/site.css            全站基础样式
 │  ├─ css/books.css           书库、海龟、导师样式
@@ -46,7 +48,7 @@ site/
 └─ data/chapters.json         道氏章节元数据
 ```
 
-《海龟交易法则》的全文已生成在 `turtle/` 页面中；项目根目录的 `../library/turtle_full.json` 是生成用的源数据，不随站点部署。
+《海龟交易法则》的全文已生成在 `turtle/` 页面中；《股票大作手回忆录》的 OCR 全文保存在 `../library/speculator.json`，公开页目前只做导读，未发布全文。
 
 ## 说明
 
@@ -60,4 +62,4 @@ site/
 - 颜色、字体、间距：`assets/css/site.css` 和 `assets/css/books.css`。
 - 道氏章节：`../tools/build_site.py` 里的 `META`，修改后运行 `python tools/build_site.py`。
 - 海龟导读、书库、导师页：`../tools/build_turtle.py`，修改后运行 `python tools/build_turtle.py`。
-- 道氏正文：`../work/chapters_raw.json`；海龟全文：`../library/turtle_full.json`（生成源数据）。
+- 道氏正文：`../work/chapters_raw.json`；海龟全文：`../library/turtle_full.json`；大作手 OCR：`../library/speculator.json`。
