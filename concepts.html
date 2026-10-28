@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>跨书概念索引 · 交易书库</title>
+<meta name="description" content="同时检索道氏理论、海龟交易法则与股票大作手回忆录；对照止损、趋势确认、仓位等概念。">
+<meta name="theme-color" content="#1c3027">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%231c3027'/><text x='32' y='45' font-size='40' text-anchor='middle' fill='%23f3eee2' font-family='serif'>龟</text></svg>">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/books.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.menu-btn,.reader-menu-btn{display:none!important}</style></noscript>
+</head>
+<body class="library-page concept-page">
+<div class="grain" aria-hidden="true"></div>
+<header class="site-head" id="siteHead">
+  <div class="head-inner">
+    <a class="brand" href="library.html" aria-label="交易书库">
+  <span class="brand-mark">书</span>
+  <span class="brand-text"><strong>交易书库</strong><small>TRADING LIBRARY</small></span>
+</a>
+    <nav class="main-nav" aria-label="主导航"><a href="library.html">书库</a><a href="concepts.html" style="color:var(--red)">概念</a><a href="mentor.html">导师</a></nav>
+    <div class="head-actions">
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="concept-hero">
+  <div class="wrap">
+    <p class="library-kicker">CROSS-BOOK INDEX / 08 CONCEPTS</p>
+    <h1>三本书，<span>同一个问题。</span></h1>
+    <p class="concept-lead">搜一个词，看看道氏、海龟和利弗莫尔各自怎么说。不是为了拼出一套“完美系统”，而是为了看清：他们在回答同一个问题时，前提和答案有什么不同。</p>
+    <div class="concept-search">
+      <input id="conceptSearch" type="search" placeholder="搜“止损”“趋势确认”“仓位”…" autocomplete="off" aria-label="跨书概念搜索">
+      <button type="button" id="conceptClear">清空</button>
+    </div>
+    <div class="concept-chips" id="conceptChips"></div>
+  </div>
+</section>
+
+<section class="wrap concept-body">
+  <div class="concept-layout">
+    <aside class="concept-side">
+      <p>CONCEPTS / 08</p>
+      <div class="concept-list" id="conceptList"></div>
+      <p class="concept-side-note">搜索覆盖三本书的正文。结果按书分组，点击可跳到原文段落。</p>
+    </aside>
+    <div class="concept-main">
+      <div id="conceptCard"></div>
+      <div class="result-head"><h2 id="resultTitle">搜索结果</h2><span id="resultCount"></span></div>
+      <div id="conceptResults"></div>
+      <p class="concept-foot">这里的“冲突”是编者整理出的差异，不是对原文的替代。真正的判断，仍要回到每一本书的上下文。</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="brand" href="library.html" aria-label="交易书库">
+  <span class="brand-mark">书</span>
+  <span class="brand-text"><strong>交易书库</strong><small>TRADING LIBRARY</small></span>
+</a>
+      <p class="footer-note">把书读成原则，把原则变成检查清单。<br>三本书的正文、规则与导读，正在整理成一套可检索的交易知识库。</p>
+    </div>
+    <div class="footer-links">
+      <div><span>平台</span><a href="library.html">书库</a><a href="concepts.html">概念索引</a><a href="mentor.html">交易导师</a></div>
+      <div><span>说明</span><a href="index.html#about">关于本站</a><a href="index.html">道氏理论</a></div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom"><span>TRADING LIBRARY · 2026</span><span>Read the rules. Keep a journal.</span></div>
+</footer>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/concept-data.js"></script>
+<script src="assets/js/concepts.js"></script>
+</body>
+</html>

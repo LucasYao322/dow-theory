@@ -1,4 +1,4 @@
-# 交易书库 · 道氏理论 × 海龟交易法则
+# 交易书库 · 道氏理论 × 海龟交易法则 × 股票大作手回忆录
 
 一个多书阅读与交易原则库：收录《道氏理论》《海龟交易法则》《股票大作手回忆录》全文，以及主题导读与跨书对照。
 
@@ -16,8 +16,9 @@ python -m http.server 8000
 
 ## 内容
 
-- 首页：道氏理论全书入口，以及“书库”导航。
-- `library.html`：交易书库，两本书的入口与导师 v0。
+- 首页：道氏理论全书入口，以及“书库 / 概念”导航。
+- `library.html`：交易书库，三本书的入口与导师 v0。
+- `concepts.html`：跨书概念索引，按“止损 / 趋势确认 / 仓位”等 8 个概念对照三本书，并全文检索。
 - `read/ch01.html … ch19.html`：道氏理论 19 章全文、导读、原书影印。
 - `turtle/`：海龟交易法则 9 章全文、规则导读、规则速查表与原书 PDF 下载。
 - `speculator/`：股票大作手回忆录的 24 章全文、6 个主题与附录。
@@ -31,13 +32,16 @@ python -m http.server 8000
 site/
 ├─ index.html                 道氏理论首页
 ├─ library.html               交易书库
+├─ concepts.html              跨书概念索引
 ├─ mentor.html                交易前检查清单
 ├─ read/ch01.html … ch19.html 道氏理论章节
 ├─ turtle/                    海龟交易法则全文与规则导读
 ├─ speculator/                股票大作手回忆录全文
 ├─ assets/
 │  ├─ css/site.css            全站基础样式
-│  ├─ css/books.css           书库、海龟、导师样式
+│  ├─ css/books.css           书库、海龟、导师、概念索引样式
+│  ├─ js/concept-data.js      三本书的检索语料
+│  ├─ js/concepts.js          概念索引搜索与对照
 │  ├─ js/main.js              首页交互
 │  ├─ js/reader.js            阅读页交互
 │  ├─ js/mentor.js            检查清单
@@ -62,4 +66,5 @@ site/
 - 颜色、字体、间距：`assets/css/site.css` 和 `assets/css/books.css`。
 - 道氏章节：`../tools/build_site.py` 里的 `META`，修改后运行 `python tools/build_site.py`。
 - 海龟导读、书库、导师页：`../tools/build_turtle.py`，修改后运行 `python tools/build_turtle.py`。
+- 概念索引：先运行 `python tools/build_concepts_page.py`（会调用 `build_concepts.py` 生成语料和页面）。
 - 道氏正文：`../work/chapters_raw.json`；海龟全文：`../library/turtle_full.json`；大作手 OCR：`../library/speculator.json`。
