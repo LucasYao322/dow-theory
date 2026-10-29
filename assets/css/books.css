@@ -1845,3 +1845,102 @@
   .error-grid { grid-template-columns: 1fr; }
   .review-result-head { align-items: start; flex-direction: column; gap: 6px; }
 }
+
+/* Fourth book: The Alchemy of Finance */
+.book-cover-soros { background: #1d3437; }
+.book-cover-soros::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120px 120px at 78% 18%, rgba(201,168,106,.2), transparent 70%),
+    repeating-linear-gradient(135deg, transparent 0 18px, rgba(243,238,226,.055) 18px 19px);
+}
+.book-cover-soros::after {
+  content: "";
+  position: absolute;
+  width: 88px; height: 88px; right: -16px; bottom: -16px;
+  border: 1px solid rgba(201,168,106,.45);
+  border-radius: 50%;
+}
+.soros-landing { --soros: #1d3437; --gold: #a9854c; }
+.soros-hero {
+  position: relative; padding: 128px 0 72px; background: #1d3437; color: var(--paper); overflow: hidden;
+}
+.soros-hero::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 52px, rgba(243,238,226,.045) 52px 53px),
+    radial-gradient(720px 420px at 78% 28%, rgba(169,133,76,.22), transparent 70%);
+}
+.soros-hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0,1.1fr) minmax(280px,.5fr); gap: 58px; align-items: center; }
+.soros-kicker { font-family: var(--mono); font-size: 9px; letter-spacing: .16em; color: rgba(243,238,226,.52); }
+.soros-hero h1 { margin-top: 18px; font-family: var(--serif); font-size: clamp(64px, 9vw, 126px); line-height: .98; letter-spacing: -.06em; }
+.soros-hero h1 span { color: #c9a86a; }
+.soros-sub { margin-top: 16px; font-family: var(--mono); font-size: 9px; letter-spacing: .24em; color: rgba(243,238,226,.48); }
+.soros-lead { max-width: 40em; margin-top: 24px; font-family: var(--serif); font-size: 17px; line-height: 2; color: rgba(243,238,226,.8); }
+.soros-stats { display: flex; gap: 34px; margin-top: 28px; }
+.soros-stats div { border-left: 1px solid rgba(243,238,226,.25); padding-left: 14px; }
+.soros-stats b { display: block; font-family: var(--serif); font-size: 27px; font-weight: 500; line-height: 1; }
+.soros-stats span { display: block; margin-top: 5px; font-size: 9px; color: rgba(243,238,226,.5); }
+.soros-actions { display: flex; gap: 12px; margin-top: 30px; }
+.soros-actions .btn-light { background: var(--paper); border-color: var(--paper); color: #1d3437; }
+.soros-actions .btn-outline-light { border-color: rgba(243,238,226,.3); color: var(--paper); }
+.soros-quote-card { position: relative; padding: 30px 26px; border: 1px solid rgba(201,168,106,.3); background: rgba(243,238,226,.04); }
+.soros-quote-card .sq-mark { display: block; height: 34px; font-family: var(--serif); font-size: 70px; line-height: .8; color: #c9a86a; opacity: .75; }
+.soros-quote-card p { font-family: var(--serif); font-size: 18px; line-height: 1.95; color: rgba(243,238,226,.88); }
+.soros-quote-card cite { display: block; margin-top: 14px; font-family: var(--mono); font-size: 8px; letter-spacing: .1em; color: rgba(243,238,226,.5); font-style: normal; }
+.soros-quote-card .sq-line { height: 1px; margin: 16px 0 10px; background: rgba(243,238,226,.16); }
+.soros-quote-card small { font-family: var(--mono); font-size: 7px; letter-spacing: .1em; color: rgba(243,238,226,.35); }
+.soros-body { padding: 64px 0 100px; }
+.soros-section-head { display: grid; grid-template-columns: 150px minmax(0,1fr); gap: 40px; margin-bottom: 28px; }
+.soros-section-head h2 { font-family: var(--serif); font-size: clamp(30px,4vw,50px); line-height: 1.25; letter-spacing: -.03em; }
+.soros-section-head p { max-width: 58ch; margin-top: 14px; font-size: 12px; line-height: 1.9; color: var(--muted); }
+.soros-theme-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.soros-theme { padding: 22px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.soros-theme > span { font-family: var(--mono); font-size: 8px; letter-spacing: .12em; color: var(--gold); }
+.soros-theme h3 { margin-top: 10px; font-family: var(--serif); font-size: 23px; }
+.soros-theme p { margin-top: 8px; font-size: 12px; line-height: 1.9; color: var(--muted); }
+.soros-theme blockquote { margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--line); font-family: var(--serif); font-size: 13px; line-height: 1.8; color: var(--ink-2); }
+.soros-parts { display: grid; grid-template-columns: repeat(5,1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.soros-part { padding: 16px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.sp-head span { font-family: var(--mono); font-size: 8px; letter-spacing: .1em; color: var(--gold); }
+.sp-head h3 { margin-top: 6px; font-family: var(--serif); font-size: 20px; }
+.sp-head small { font-family: var(--mono); font-size: 8px; color: var(--muted-2); }
+.soros-part > p { margin-top: 7px; font-size: 10px; line-height: 1.7; color: var(--muted); }
+.soros-chapter-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.soros-chapter { display: grid; grid-template-columns: 30px 1fr auto; gap: 10px; align-items: baseline; padding: 10px 13px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.soros-chapter span { font-family: var(--mono); font-size: 8px; color: var(--gold); }
+.soros-chapter b { font-family: var(--serif); font-size: 13px; font-weight: 500; }
+.soros-chapter small { font-family: var(--mono); font-size: 8px; color: var(--muted-2); }
+.soros-compare { margin-top: 48px; padding: 26px 28px; border: 1px solid var(--line); background: rgba(29,52,55,.045); }
+.soros-compare > span { font-family: var(--mono); font-size: 8px; letter-spacing: .14em; color: var(--gold); }
+.soros-compare h3 { margin-top: 9px; font-family: var(--serif); font-size: 26px; line-height: 1.4; }
+.soros-compare p { margin-top: 9px; max-width: 68ch; font-size: 12px; line-height: 1.9; color: var(--muted); }
+.soros-compare a { display: inline-block; margin-top: 12px; font-size: 11px; color: var(--gold); border-bottom: 1px solid rgba(169,133,76,.35); padding-bottom: 2px; }
+.soros-status { margin-top: 24px; padding: 17px 19px; border: 1px dashed var(--line-strong); }
+.soros-status span { font-family: var(--mono); font-size: 8px; letter-spacing: .12em; color: var(--gold); }
+.soros-status p { margin-top: 5px; font-size: 11px; line-height: 1.85; color: var(--muted); }
+.soros-disclaimer { margin-top: 24px; padding-top: 13px; border-top: 1px solid var(--line); font-size: 10px; line-height: 1.8; color: var(--muted); }
+@media (max-width: 1000px) {
+  .soros-hero-grid { grid-template-columns: 1fr; gap: 28px; }
+  .soros-quote-card { max-width: 540px; }
+  .soros-section-head { grid-template-columns: 1fr; gap: 14px; }
+  .soros-parts { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  .soros-hero { padding-top: 100px; }
+  .soros-hero h1 { font-size: clamp(54px, 16vw, 80px); }
+  .soros-theme-grid, .soros-chapter-grid, .soros-parts { grid-template-columns: 1fr; }
+  .soros-actions { flex-wrap: wrap; }
+}
+
+.soros-landing .site-head {
+  background: rgba(243, 238, 226, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.soros-landing .site-head .brand-text strong { color: var(--ink); }
+.soros-landing .site-head .brand-text small { color: var(--muted); }
+.soros-landing .site-head .main-nav a { color: var(--ink-2); }
