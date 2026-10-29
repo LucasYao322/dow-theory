@@ -66,7 +66,7 @@
         }
       }
     }
-    var cap = fontSizeMobile ? 12000 : 7200;
+    var cap = fontSizeMobile ? 9000 : 11000;
     if (targets.length > cap) {
       var keep = [];
       var stride = targets.length / cap;
@@ -96,7 +96,7 @@
     var t = now - start;
     ctx.clearRect(0, 0, W, H);
     if (guide && !leaving) {
-      ctx.globalAlpha = fontSizeMobile ? 0.11 : 0.08;
+      ctx.globalAlpha = fontSizeMobile ? 0.08 : 0.02;
       ctx.drawImage(guide, 0, 0, W, H);
       ctx.globalAlpha = 1;
     }
