@@ -1,6 +1,6 @@
 # 交易书库 · 道氏理论 × 海龟交易法则 × 股票大作手回忆录 × 金融炼金术
 
-一个多书阅读与交易原则库：收录《道氏理论》《海龟交易法则》《股票大作手回忆录》全文，以及《金融炼金术》导读、主题卡与跨书对照。
+一个多书阅读与交易原则库：收录《道氏理论》《海龟交易法则》《股票大作手回忆录》《金融炼金术》全文，以及主题导读与跨书对照。
 
 ## 打开方式
 
@@ -18,13 +18,13 @@ python -m http.server 8000
 
 - 首页：道氏理论全书入口，以及“书库 / 概念”导航。
 - `library.html`：交易书库，四本书的入口与导师 v0。
-- `soros/`：金融炼金术的 5 个部分、8 个概念与 20 章导读。
-- `concepts.html`：跨书概念索引，按“止损 / 趋势确认 / 仓位”等 8 个概念对照三本书，支持全文检索与本地语义检索。
-- `review.html`：语义复盘。写下一笔亏损交易，系统找出三本书里最接近的段落，并让你判断“这一笔更像哪一种错误”。
+- `soros/`：金融炼金术的 5 个部分、8 个概念与 20 章 + 结束语全文。
+- `concepts.html`：跨书概念索引，按“止损 / 趋势确认 / 仓位”等 8 个概念对照四本书，支持全文检索与本地语义检索。
+- `review.html`：语义复盘。写下一笔亏损交易，系统找出四本书里最接近的段落，并让你判断“这一笔更像哪一种错误”。
 - `read/ch01.html … ch19.html`：道氏理论 19 章全文、导读、原书影印。
 - `turtle/`：海龟交易法则 9 章全文、规则导读、规则速查表与原书 PDF 下载。
 - `speculator/`：股票大作手回忆录的 24 章全文、6 个主题与附录。
-- `mentor.html`：三本书对照 + 交易前检查清单（本地保存勾选状态）。
+- `mentor.html`：四本书的视角说明 + 交易前检查清单（本地保存勾选状态）。
 - 全文搜索：道氏首页右上角放大镜，或按 `/`；结果可直接跳到具体段落。
 - 阅读工具：字号调整、夜间模式、章节收藏、阅读进度、上一章 / 下一章。
 
@@ -36,7 +36,7 @@ site/
 ├─ library.html               交易书库
 ├─ concepts.html              跨书概念索引
 ├─ review.html                语义复盘
-├─ soros/                     金融炼金术导读
+├─ soros/                     金融炼金术全文与导读
 ├─ mentor.html                交易前检查清单
 ├─ read/ch01.html … ch19.html 道氏理论章节
 ├─ turtle/                    海龟交易法则全文与规则导读
@@ -44,7 +44,7 @@ site/
 ├─ assets/
 │  ├─ css/site.css            全站基础样式
 │  ├─ css/books.css           书库、海龟、导师、概念索引样式
-│  ├─ js/concept-data.js      三本书的检索语料
+│  ├─ js/concept-data.js      四本书的检索语料
 │  ├─ js/concepts.js          概念索引、关键词与语义搜索
 │  ├─ js/semantic-engine.js   可复用的本地语义检索引擎
 │  ├─ js/review.js            复盘表单、错误分类与原文对照
@@ -78,6 +78,6 @@ site/
 - 海龟导读、书库、导师页：`../tools/build_turtle.py`，修改后运行 `python tools/build_turtle.py`。
 - 概念索引：先运行 `python tools/build_concepts_page.py`（会调用 `build_concepts.py` 生成语料和页面），再运行 `python tools/build_embeddings.py` 更新语义向量。
 - 语义复盘：运行 `python tools/build_review.py`。
-- 金融炼金术导读：运行 `python tools/build_soros.py`；完整抽取文本保存在 `../library/soros.json`，公开页目前不含全文。
+- 金融炼金术：先运行 `python tools/build_soros_chapters.py` 生成 21 个全文页，再运行 `python tools/build_soros.py` 生成导读页；源数据在 `../library/soros.json`。
 - 语义模型与 WASM 运行时体积约 34MB，首次点“启用语义搜索”时才加载；不启用时只走关键词检索。
 - 道氏正文：`../work/chapters_raw.json`；海龟全文：`../library/turtle_full.json`；大作手 OCR：`../library/speculator.json`。

@@ -93,7 +93,7 @@
       var hb = hits.filter(function (h) { return h.s.b === b.id; })[0];
       return (hb ? hb.score : 0) - (ha ? ha.score : 0);
     });
-    var out = '<div class="review-books-head"><span>03 / 原文对照</span><b>三本书里最接近的段落</b></div>';
+    var out = '<div class="review-books-head"><span>03 / 原文对照</span><b>四本书里最接近的段落</b></div>';
     order.forEach(function (bk) {
       var items = hits.filter(function (h) { return h.s.b === bk.id; }).slice(0, 3);
       if (!items.length) return;
@@ -158,7 +158,7 @@
     var suggested = detect(q, r);
     currentTrade = { symbol: val("rSymbol"), r: r };
     submit.disabled = true;
-    submit.textContent = "正在读三本书…";
+    submit.textContent = "正在读四本书…";
     status.textContent = "准备语义模型…";
     placeholder.hidden = true;
     content.hidden = true;

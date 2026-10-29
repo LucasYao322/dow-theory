@@ -61,7 +61,7 @@
 
   async function search(q, onStatus) {
     await load(onStatus);
-    if (onStatus) onStatus("正在比较三本书的相关段落…");
+    if (onStatus) onStatus("正在比较四本书的相关段落…");
     var ex = expand(q);
     var out = await extractor(ex.text, { pooling: "cls", normalize: true });
     var qv = out.data;

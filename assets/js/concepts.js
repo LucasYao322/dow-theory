@@ -120,7 +120,7 @@
         Array.prototype.forEach.call(results.querySelectorAll(".result-item"), function () { n++; });
         count.textContent = total + " 条候选 · 显示 " + n;
       } else {
-        count.textContent = total + " 条 / 三本书";
+        count.textContent = total + " 条 / 四本书";
       }
     }
   }
