@@ -9,9 +9,10 @@
 
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
   var W = 0, H = 0, fontSize = 0, fontSizeMobile = false;
-  var particles = [], mouse = null, leaving = false, frame = 0, start = 0, guide = null;
+  var guide = null, targets = [], particles = [];
+  var mouse = null, active = false, settling = false, leaving = false;
+  var frame = 0, start = 0, lastMove = 0;
   var FONT = "Arial, Helvetica, sans-serif";
-  var lines = ["READ", "THE MARKET.", "THEN TRADE."];
 
   function resizeCanvas() {
     W = window.innerWidth;
@@ -56,13 +57,13 @@
     });
 
     guide = off;
+    targets = [];
     var data = octx.getImageData(0, 0, W, H).data;
     var step = fontSizeMobile ? 2 : Math.max(2, Math.round(fontSize / 64));
-    var targets = [];
     for (var y = 0; y < H; y += step) {
       for (var x = 0; x < W; x += step) {
         if (data[(y * W + x) * 4 + 3] > 120) {
-          targets.push({ x: x + (Math.random() - 0.5) * step * 0.55, y: y + (Math.random() - 0.5) * step * 0.55 });
+          targets.push({ x: x, y: y });
         }
       }
     }
@@ -73,33 +74,59 @@
       for (var j = 0; j < cap; j++) keep.push(targets[Math.floor(j * stride)]);
       targets = keep;
     }
+
+    particles = [];
+    active = false;
+    settling = false;
+    drawSolid();
+  }
+
+  function drawSolid() {
+    if (!guide) return;
+    ctx.clearRect(0, 0, W, H);
+    ctx.globalAlpha = 1;
+    ctx.drawImage(guide, 0, 0, W, H);
+  }
+
+  function activate() {
+    if (active || settling || leaving || !targets.length) return;
+    active = true;
+    settling = false;
     particles = targets.map(function (t) {
       return {
-        tx: t.x, ty: t.y,
-        x: W / 2 + (Math.random() - 0.5) * W * 1.15,
-        y: H / 2 + (Math.random() - 0.5) * H * 1.2,
+        x: t.x, y: t.y, tx: t.x, ty: t.y,
         vx: 0, vy: 0,
-        size: (fontSizeMobile ? 0.45 : 0.6) + Math.random() * (fontSizeMobile ? 0.9 : 1.6),
-        alpha: 0.3 + Math.random() * 0.7,
-        seed: Math.random() * Math.PI * 2,
-        gold: Math.random() < 0.045,
-        delay: Math.random() * 500
+        size: (fontSizeMobile ? 0.45 : 0.55) + Math.random() * (fontSizeMobile ? 0.9 : 1.5),
+        alpha: 0.55 + Math.random() * 0.45,
+        gold: Math.random() < 0.045
       };
     });
-    start = performance.now();
-    if (!frame) loop();
+    lastMove = performance.now();
+    start = lastMove;
+    if (!frame) frame = requestAnimationFrame(loop);
+  }
+
+  function settle() {
+    if (!active) return;
+    active = false;
+    settling = true;
+  }
+
+  function finishSolid() {
+    settling = false;
+    particles = [];
+    drawSolid();
+    if (frame) cancelAnimationFrame(frame);
+    frame = 0;
   }
 
   function loop(ts) {
+    if (!active && !settling && !leaving) { finishSolid(); return; }
     frame = requestAnimationFrame(loop);
     var now = ts || performance.now();
-    var t = now - start;
     ctx.clearRect(0, 0, W, H);
-    if (guide && !leaving) {
-      ctx.globalAlpha = fontSizeMobile ? 0.08 : 0.02;
-      ctx.drawImage(guide, 0, 0, W, H);
-      ctx.globalAlpha = 1;
-    }
+    var maxDist = 0;
+
     for (var i = 0; i < particles.length; i++) {
       var p = particles[i];
       if (leaving) {
@@ -108,45 +135,48 @@
         p.vx *= 0.99;
         p.vy = p.vy * 0.99 + 0.14;
       } else {
-        if (t < p.delay) continue;
-        var driftX = Math.sin(t * 0.001 + p.seed) * 0.14;
-        var driftY = Math.cos(t * 0.00085 + p.seed) * 0.11;
-        p.vx += (p.tx - p.x) * 0.024 + driftX;
-        p.vy += (p.ty - p.y) * 0.024 + driftY;
-        if (mouse) {
-          var dx = p.x - mouse.x;
-          var dy = p.y - mouse.y;
-          var d2 = dx * dx + dy * dy;
-          if (d2 < 15000 && d2 > 1) {
-            var d = Math.sqrt(d2);
-            var force = (1 - d / 122) * 2.8;
-            p.vx += (dx / d) * force;
-            p.vy += (dy / d) * force;
+        if (active && mouse) {
+          var mdx = p.x - mouse.x;
+          var mdy = p.y - mouse.y;
+          var md = Math.sqrt(mdx * mdx + mdy * mdy);
+          if (md < 190 && md > 0.1) {
+            var force = (1 - md / 190);
+            p.vx += (mdx / md) * force * 2.0 + (-mdy / md) * force * 0.75;
+            p.vy += (mdy / md) * force * 2.0 + (mdx / md) * force * 0.75;
           }
         }
-        p.vx *= 0.9;
-        p.vy *= 0.9;
+        var spring = active ? 0.012 : 0.05;
+        var damp = active ? 0.94 : 0.86;
+        p.vx += (p.tx - p.x) * spring;
+        p.vy += (p.ty - p.y) * spring;
+        p.vx *= damp;
+        p.vy *= damp;
         p.x += p.vx;
         p.y += p.vy;
+        var dist = Math.abs(p.tx - p.x) + Math.abs(p.ty - p.y);
+        if (dist > maxDist) maxDist = dist;
       }
-      ctx.globalAlpha = p.alpha * (leaving ? 0.7 : 0.9);
-      ctx.fillStyle = p.gold ? "rgba(201,168,106,0.9)" : "rgba(242,237,226,0.9)";
+      ctx.globalAlpha = p.alpha * (leaving ? 0.75 : 0.95);
+      ctx.fillStyle = p.gold ? "rgba(201,168,106,0.95)" : "rgba(242,237,226,0.95)";
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
       ctx.fill();
     }
     ctx.globalAlpha = 1;
-    if (leaving && now - start > 850) {
-      cancelAnimationFrame(frame);
-      frame = 0;
-    }
+
+    if (active && now - lastMove > 700) settle();
+    if (settling && maxDist < 1.4) finishSolid();
   }
 
   function enter(e) {
     if (e) e.preventDefault();
     if (leaving) return;
+    if (!active) activate();
     leaving = true;
+    active = false;
+    settling = false;
     document.body.classList.add("is-leaving");
+    start = performance.now();
     particles.forEach(function (p) {
       var dx = p.x - W / 2;
       var dy = p.y - H / 2;
@@ -154,14 +184,26 @@
       p.vx = dx / d * (2 + Math.random() * 6);
       p.vy = dy / d * (2 + Math.random() * 6) - Math.random() * 2;
     });
+    if (!frame) frame = requestAnimationFrame(loop);
     window.setTimeout(function () { window.location.href = "library.html"; }, 620);
   }
 
-  window.addEventListener("pointermove", function (e) { mouse = { x: e.clientX, y: e.clientY }; }, { passive: true });
-  window.addEventListener("pointerleave", function () { mouse = null; }, { passive: true });
+  window.addEventListener("pointermove", function (e) {
+    mouse = { x: e.clientX, y: e.clientY };
+    if (!active && !settling && !leaving) {
+      activate();
+    } else if (settling && !leaving) {
+      active = true;
+      settling = false;
+    }
+    lastMove = performance.now();
+  }, { passive: true });
+  window.addEventListener("pointerleave", function () { mouse = null; settle(); }, { passive: true });
   window.addEventListener("resize", function () {
     clearTimeout(window.__introResize);
-    window.__introResize = setTimeout(function () { resizeCanvas(); }, 180);
+    window.__introResize = setTimeout(function () {
+      if (!leaving) resizeCanvas();
+    }, 160);
   }, { passive: true });
   Array.prototype.forEach.call(document.querySelectorAll("[data-intro-enter]"), function (a) {
     a.addEventListener("click", function (e) { e.stopPropagation(); enter(e); });
@@ -173,10 +215,11 @@
   window.addEventListener("keydown", function (e) {
     if (e.key === "Enter" || e.key === " ") enter(e);
   });
+
   if (document.fonts && document.fonts.ready) {
     document.fonts.ready.then(resizeCanvas);
   } else {
     resizeCanvas();
   }
-  setTimeout(function () { if (!particles.length) resizeCanvas(); }, 700);
+  setTimeout(function () { if (!guide) resizeCanvas(); }, 700);
 })();
