@@ -1975,3 +1975,60 @@
 .soros-prose > p { font-size: var(--reader-size, 18px); line-height: 2.05; }
 .soros-prose .pg { color: var(--muted-2); }
 .soros-prose .prose-heading { color: var(--ink); }
+
+/* Concept index readability pass */
+.concept-layout { grid-template-columns: 220px minmax(0, 1fr); gap: 48px; }
+.concept-side > p { font-size: 9.5px; letter-spacing: .12em; padding-bottom: 12px; }
+.concept-list button { font-size: 13px; padding: 10px 0; line-height: 1.5; }
+.concept-side-note { margin-top: 20px; font-size: 11px; line-height: 1.9; }
+.concept-card { padding: 30px; }
+.cc-top { font-size: 9px; }
+.concept-card h2 { margin-top: 20px; }
+.concept-question { margin-top: 8px; font-size: 17px; line-height: 1.7; }
+.stance { padding: 20px; }
+.stance .book-name { font-size: 10.5px; }
+.stance p { margin-top: 10px; font-family: var(--serif); font-size: 13.5px; line-height: 1.95; color: var(--ink-2); }
+.stance a { margin-top: 12px; font-size: 11px; }
+.concept-conflict { margin-top: 18px; padding: 18px 20px; }
+.concept-conflict b { font-size: 9.5px; }
+.concept-conflict p { margin-top: 6px; font-family: var(--serif); font-size: 13px; line-height: 1.95; color: var(--muted); }
+.concept-chip { padding: 8px 13px; font-size: 12px; }
+.semantic-row { margin-top: 18px; gap: 10px; }
+.semantic-btn { padding: 8px 13px; font-size: 9.5px; }
+.semantic-example { font-size: 11.5px; }
+.semantic-status { font-size: 10.5px; }
+.semantic-hints { font-size: 10.5px; line-height: 1.7; }
+.semantic-hints b { font-size: 9px; }
+.semantic-hints span { padding: 3px 7px; }
+.result-head { margin-top: 36px; }
+.result-head h2 { font-size: 27px; }
+.result-head span { font-size: 10px; }
+.result-book { margin-top: 26px; }
+.result-book-head b { font-size: 17px; }
+.result-book-head small { font-size: 10px; }
+.result-item { padding: 16px 0; }
+.ri-meta { gap: 12px; font-size: 10px; line-height: 1.5; }
+.ri-text { margin-top: 7px; font-family: var(--serif); font-size: 13.5px; line-height: 1.95; color: var(--muted); }
+.concept-foot { margin-top: 38px; font-size: 11px; line-height: 1.9; }
+@media (max-width: 1000px) {
+  .concept-layout { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 720px) {
+  .concept-card { padding: 20px; }
+  .stance { padding: 17px; }
+  .concept-list button { font-size: 12px; }
+}
+
+/* Concept reading size: final pass */
+.concept-list button { font-size: 13.5px; }
+.concept-side-note { font-size: 11.5px; }
+.stance p { font-size: 14px; line-height: 2; }
+.stance .book-name { font-size: 11px; }
+.stance a { font-size: 11.5px; }
+.concept-conflict p { font-size: 13.5px; line-height: 2; }
+.concept-question { font-size: 18px; }
+.ri-text { font-size: 14px; line-height: 2; }
+.ri-meta { font-size: 10.5px; }
+.result-book-head b { font-size: 18px; }
+.result-book-head small { font-size: 10.5px; }
+.result-head h2 { font-size: 28px; }
