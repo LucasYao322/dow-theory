@@ -169,7 +169,7 @@
     if (semanticLoading) return;
     semanticLoading = true;
     if (semBtn) { semBtn.disabled = true; semBtn.textContent = "正在加载…"; }
-    if (semStatus) semStatus.textContent = "正在加载中文向量模型（约 34MB）…";
+    if (semStatus) semStatus.textContent = "正在加载中文向量模型（约 34MB，首次可能需要 30–60 秒）…";
     try {
       var mod = await import(new URL("transformers.min.js", SCRIPT_URL).href);
       var pipeline = mod.pipeline;

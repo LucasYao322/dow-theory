@@ -32,7 +32,7 @@
 
   async function doLoad(onStatus) {
     if (ready) return;
-    if (onStatus) onStatus("正在加载中文向量模型（约 34MB）…");
+    if (onStatus) onStatus("正在加载中文向量模型（约 34MB，首次可能需要 30–60 秒）…");
     var mod = await import(new URL("transformers.min.js", SCRIPT_URL).href);
     var env = mod.env;
     env.allowLocalModels = true;
