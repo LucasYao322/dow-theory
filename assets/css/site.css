@@ -281,6 +281,8 @@ svg {
   transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
 
+.head-cta-library { border-color: var(--line-strong); color: var(--muted); }
+.head-cta-library:hover { color: var(--paper); }
 .head-cta:hover {
   background: var(--red);
   border-color: var(--red);
@@ -3458,3 +3460,5 @@ body.theme-dark .pg {
 .key-box li { font-size: 13px; line-height: 1.85; }
 .kb-head span { font-size: 10px; }
 .toc-item { font-size: 12.5px; }
+
+@media (max-width: 1180px) { .head-cta-library { display: none; } }
