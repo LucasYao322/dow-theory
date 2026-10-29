@@ -8,14 +8,15 @@
   if (reduced) { document.body.classList.add("no-motion"); return; }
 
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
-  var W = 0, H = 0, fontSize = 0;
+  var W = 0, H = 0, fontSize = 0, fontSizeMobile = false;
   var particles = [], mouse = null, leaving = false, frame = 0, start = 0, guide = null;
-  var FONT = '"Noto Serif SC Web", "Noto Serif SC", "Songti SC", serif';
-  var lines = ["先读懂。", "再下注。"];
+  var FONT = "Arial, Helvetica, sans-serif";
+  var lines = ["READ", "THE MARKET.", "THEN TRADE."];
 
   function resizeCanvas() {
     W = window.innerWidth;
     H = window.innerHeight;
+    fontSizeMobile = W < 600;
     canvas.width = Math.floor(W * dpr);
     canvas.height = Math.floor(H * dpr);
     canvas.style.width = W + "px";
@@ -30,50 +31,59 @@
     off.width = W;
     off.height = H;
     var octx = off.getContext("2d");
-    fontSize = Math.min(W * 0.185, H * 0.225);
-    var mobile = W < 600;
-    var lines = mobile ? ["先读懂", "再下注"] : ["先读懂。", "再下注。"];
-    if (mobile) fontSize = Math.min(W * 0.30, H * 0.13);
     octx.clearRect(0, 0, W, H);
     octx.fillStyle = "#fff";
     octx.textAlign = "center";
     octx.textBaseline = "middle";
-    octx.font = "700 " + fontSize + "px " + FONT;
-    var lineHeight = fontSize * (mobile ? 1.12 : 1.02);
-    var centerY = H * 0.43;
-    var top = centerY - lineHeight * (lines.length - 1) / 2;
-    lines.forEach(function (line, i) {
+
+    fontSize = Math.min(H * 0.205, W * 0.145);
+    if (fontSizeMobile) fontSize = Math.min(H * 0.075, W * 0.16);
+    var layout = fontSizeMobile ? ["READ", "THE MARKET.", "THEN", "TRADE."] : ["READ", "THE MARKET.", "THEN TRADE."];
+    octx.font = "800 " + fontSize + "px " + FONT;
+    var maxWidth = W * (fontSizeMobile ? 0.94 : 0.84);
+    var widest = 0;
+    layout.forEach(function (line) { widest = Math.max(widest, octx.measureText(line).width); });
+    if (widest > maxWidth) {
+      fontSize *= maxWidth / widest;
+      octx.font = "800 " + fontSize + "px " + FONT;
+    }
+
+    var lineHeight = fontSize * (fontSizeMobile ? 1.10 : 1.04);
+    var centerY = H * 0.47;
+    var top = centerY - lineHeight * (layout.length - 1) / 2;
+    layout.forEach(function (line, i) {
       octx.fillText(line, W / 2, top + i * lineHeight);
     });
+
     guide = off;
     var data = octx.getImageData(0, 0, W, H).data;
-    var step = W < 600 ? 2 : Math.max(3, Math.round(fontSize / 58));
+    var step = fontSizeMobile ? 2 : Math.max(2, Math.round(fontSize / 64));
     var targets = [];
     for (var y = 0; y < H; y += step) {
       for (var x = 0; x < W; x += step) {
         if (data[(y * W + x) * 4 + 3] > 120) {
-          targets.push({ x: x + (Math.random() - 0.5) * (mobile ? step * 0.35 : step), y: y + (Math.random() - 0.5) * (mobile ? step * 0.35 : step) });
+          targets.push({ x: x + (Math.random() - 0.5) * step * 0.55, y: y + (Math.random() - 0.5) * step * 0.55 });
         }
       }
     }
-    var cap = W < 600 ? 11000 : 7000;
+    var cap = fontSizeMobile ? 12000 : 7200;
     if (targets.length > cap) {
       var keep = [];
-      var stride = targets.length / 7000;
+      var stride = targets.length / cap;
       for (var j = 0; j < cap; j++) keep.push(targets[Math.floor(j * stride)]);
       targets = keep;
     }
     particles = targets.map(function (t) {
       return {
         tx: t.x, ty: t.y,
-        x: W / 2 + (Math.random() - 0.5) * W * 1.1,
+        x: W / 2 + (Math.random() - 0.5) * W * 1.15,
         y: H / 2 + (Math.random() - 0.5) * H * 1.2,
         vx: 0, vy: 0,
-        size: (mobile ? 0.45 : 0.6) + Math.random() * (mobile ? 0.9 : 1.7),
-        alpha: 0.35 + Math.random() * 0.65,
+        size: (fontSizeMobile ? 0.45 : 0.6) + Math.random() * (fontSizeMobile ? 0.9 : 1.6),
+        alpha: 0.3 + Math.random() * 0.7,
         seed: Math.random() * Math.PI * 2,
-        gold: Math.random() < 0.08,
-        delay: Math.random() * 400
+        gold: Math.random() < 0.045,
+        delay: Math.random() * 500
       };
     });
     start = performance.now();
@@ -86,7 +96,7 @@
     var t = now - start;
     ctx.clearRect(0, 0, W, H);
     if (guide && !leaving) {
-      ctx.globalAlpha = W < 600 ? 0.20 : 0.16;
+      ctx.globalAlpha = fontSizeMobile ? 0.11 : 0.08;
       ctx.drawImage(guide, 0, 0, W, H);
       ctx.globalAlpha = 1;
     }
@@ -96,13 +106,13 @@
         p.x += p.vx;
         p.y += p.vy;
         p.vx *= 0.99;
-        p.vy = p.vy * 0.99 + 0.12;
+        p.vy = p.vy * 0.99 + 0.14;
       } else {
         if (t < p.delay) continue;
-        var driftX = Math.sin(t * 0.0011 + p.seed) * 0.18;
-        var driftY = Math.cos(t * 0.0009 + p.seed) * 0.14;
-        p.vx += (p.tx - p.x) * 0.022 + driftX;
-        p.vy += (p.ty - p.y) * 0.022 + driftY;
+        var driftX = Math.sin(t * 0.001 + p.seed) * 0.14;
+        var driftY = Math.cos(t * 0.00085 + p.seed) * 0.11;
+        p.vx += (p.tx - p.x) * 0.024 + driftX;
+        p.vy += (p.ty - p.y) * 0.024 + driftY;
         if (mouse) {
           var dx = p.x - mouse.x;
           var dy = p.y - mouse.y;
@@ -126,7 +136,7 @@
       ctx.fill();
     }
     ctx.globalAlpha = 1;
-    if (leaving && now - start > 900) {
+    if (leaving && now - start > 850) {
       cancelAnimationFrame(frame);
       frame = 0;
     }
@@ -154,7 +164,11 @@
     window.__introResize = setTimeout(function () { resizeCanvas(); }, 180);
   }, { passive: true });
   Array.prototype.forEach.call(document.querySelectorAll("[data-intro-enter]"), function (a) {
-    a.addEventListener("click", enter);
+    a.addEventListener("click", function (e) { e.stopPropagation(); enter(e); });
+  });
+  document.querySelector(".intro-page").addEventListener("click", function (e) {
+    if (e.target.closest("a")) return;
+    enter(e);
   });
   window.addEventListener("keydown", function (e) {
     if (e.key === "Enter" || e.key === " ") enter(e);

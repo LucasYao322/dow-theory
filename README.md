@@ -16,7 +16,7 @@ python -m http.server 8000
 
 ## 内容
 
-- `index.html`：沙粒文字封面“先读懂。再下注。”，点击进入书库。
+- `index.html`：沙粒文字封面“READ THE MARKET. THEN TRADE.”，点击进入书库。
 - `dow.html`：道氏理论全书入口，以及“书库 / 概念”导航。
 - `library.html`：交易书库，四本书的入口与导师 v0。
 - `soros/`：金融炼金术的 5 个部分、8 个概念与 20 章 + 结束语全文。
