@@ -86,7 +86,7 @@
     var t = now - start;
     ctx.clearRect(0, 0, W, H);
     if (guide && !leaving) {
-      ctx.globalAlpha = W < 600 ? 0.15 : 0.08;
+      ctx.globalAlpha = W < 600 ? 0.20 : 0.16;
       ctx.drawImage(guide, 0, 0, W, H);
       ctx.globalAlpha = 1;
     }
