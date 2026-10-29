@@ -16,7 +16,8 @@ python -m http.server 8000
 
 ## 内容
 
-- 首页：道氏理论全书入口，以及“书库 / 概念”导航。
+- `index.html`：沙粒文字封面“先读懂。再下注。”，点击进入书库。
+- `dow.html`：道氏理论全书入口，以及“书库 / 概念”导航。
 - `library.html`：交易书库，四本书的入口与导师 v0。
 - `soros/`：金融炼金术的 5 个部分、8 个概念与 20 章 + 结束语全文。
 - `concepts.html`：跨书概念索引，按“止损 / 趋势确认 / 仓位”等 8 个概念对照四本书，支持全文检索与本地语义检索。
@@ -34,6 +35,8 @@ python -m http.server 8000
 site/
 ├─ index.html                 道氏理论首页
 ├─ library.html               交易书库
+├─ index.html                沙粒文字封面
+├─ dow.html                  道氏理论首页
 ├─ concepts.html              跨书概念索引
 ├─ review.html                语义复盘
 ├─ soros/                     金融炼金术全文与导读
@@ -75,6 +78,7 @@ site/
 
 - 颜色、字体、间距：`assets/css/site.css` 和 `assets/css/books.css`。
 - 道氏章节：`../tools/build_site.py` 里的 `META`，修改后运行 `python tools/build_site.py`。
+- 封面页：`python tools/build_intro.py`。
 - 海龟导读、书库、导师页：`../tools/build_turtle.py`，修改后运行 `python tools/build_turtle.py`。
 - 概念索引：先运行 `python tools/build_concepts_page.py`（会调用 `build_concepts.py` 生成语料和页面），再运行 `python tools/build_embeddings.py` 更新语义向量。
 - 语义复盘：运行 `python tools/build_review.py`。

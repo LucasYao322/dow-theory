@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>道氏理论 · 阅读与图谱</title>
+<meta name="description" content="把 1932 年的《道氏理论》做成一部可读、可查、可对照原书影印的数字读本。">
+<meta name="theme-color" content="#f3eee2">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23171410'/><text x='32' y='45' font-size='42' text-anchor='middle' fill='%23f3eee2' font-family='serif'>道</text></svg>">
+<link rel="stylesheet" href="assets/css/site.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.menu-btn,.reader-menu-btn{display:none!important}</style></noscript>
+</head>
+<body class="home">
+<div class="grain" aria-hidden="true"></div>
+<header class="site-head" id="siteHead">
+  <div class="head-inner">
+    <a class="brand" href="dow.html" aria-label="道氏理论 · 首页">
+  <span class="brand-mark">道</span>
+  <span class="brand-text"><strong>道氏理论</strong><small>THE DOW THEORY</small></span>
+</a>
+    <nav class="main-nav" aria-label="主导航">
+      <a href="#principles">理论精要</a>
+      <a href="#moves">三种运动</a>
+      <a href="library.html">书库</a>
+      <a href="concepts.html">概念</a>
+      <a href="#chapters">章节目录</a>
+      <a href="#gallery">原书图谱</a>
+    </nav>
+    <div class="head-actions">
+      <a class="head-cta head-cta-library" href="library.html">交易书库</a>
+      <button class="icon-btn" data-search-open aria-label="搜索全书"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path></svg></button>
+      <a class="head-cta" href="read/ch01.html">开始阅读</a>
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <p class="kicker"><span>RHEA</span><span>1932</span><span>珍藏版</span></p>
+    <div class="title-wrap">
+      <h1><span>道氏</span><span class="accent">理论</span></h1>
+    </div>
+    <p class="hero-en">THE DOW THEORY</p>
+    <p class="lead">一部写于大萧条深处的书。它把查尔斯·道的观察、汉密尔顿的评论，整理成一套关于<em>趋势、确认与纪律</em>的语言。</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="read/ch01.html">开始阅读 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+      <a class="btn btn-ghost" href="#principles">先看理论精要</a>
+    </div>
+    <div class="hero-meta">
+      <span><b>19</b> 章</span><span class="dot"></span>
+      <span><b>183</b> 页</span><span class="dot"></span>
+      <span>原书影印对照</span><span class="dot"></span>
+      <span>全文可检索</span>
+    </div>
+    <a class="continue-pill" id="continuePill" href="read/ch01.html" hidden>
+      <span class="cp-label">继续阅读</span>
+      <span class="cp-title" id="continueTitle">第 1 章 · 道氏理论的演变</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg>
+    </a>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-panel">
+      <div class="panel-head">
+        <div>
+          <p class="panel-kicker">MARKET BAROMETER</p>
+          <p class="panel-date">1929 · 秋</p>
+        </div>
+        <div class="panel-stamp"><span>转折</span><small>REVERSAL</small></div>
+      </div>
+      <div class="panel-quote">趋势的反转。</div>
+      <div class="panel-index">
+        <span class="pi-value">381.17</span>
+        <span class="pi-unit">→ 198.60</span>
+        <span class="pi-drop">−47.9%</span>
+      </div>
+      <p class="panel-caption">道琼斯工业平均指数，1929 年 9 月 3 日至 11 月 13 日</p>
+      <div class="hero-chart-wrap">
+        <svg id="heroChart" viewBox="0 0 660 330" role="img" aria-label="1929 年道琼斯工业平均指数的上涨、崩盘与反弹示意图">
+          <defs>
+            <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#a93b2a" stop-opacity=".16"></stop>
+              <stop offset="100%" stop-color="#a93b2a" stop-opacity="0"></stop>
+            </linearGradient>
+          </defs>
+          <g class="hc-grid">
+            <path d="M40 60H630M40 120H630M40 180H630M40 240H630M40 300H630"></path>
+            <path d="M40 20V300M190 20V300M340 20V300M490 20V300M630 20V300"></path>
+          </g>
+          <path class="hc-area" d="M40 246C80 240 100 226 125 232C150 238 160 208 185 204C210 200 220 218 240 210C265 200 275 172 300 176C325 180 338 156 360 148C385 139 398 116 420 104C440 94 452 78 470 92C482 102 490 146 502 176C514 208 530 234 550 246C572 260 595 246 615 226C628 212 634 204 640 200V300H40Z"></path>
+          <path class="hc-line hc-dow" d="M40 246C80 240 100 226 125 232C150 238 160 208 185 204C210 200 220 218 240 210C265 200 275 172 300 176C325 180 338 156 360 148C385 139 398 116 420 104C440 94 452 78 470 92C482 102 490 146 502 176C514 208 530 234 550 246C572 260 595 246 615 226C628 212 634 204 640 200"></path>
+          <path class="hc-line hc-rail" d="M40 262C78 252 104 246 130 250C158 254 174 232 198 226C222 220 236 232 258 226C280 220 298 198 320 196C342 194 356 176 378 170C400 164 414 140 436 132C458 124 468 106 484 118C500 130 506 164 520 190C536 220 554 250 574 258C594 266 616 246 640 232"></path>
+          <g class="hc-marker">
+            <path d="M470 74V300"></path>
+            <circle cx="470" cy="92" r="6"></circle>
+            <text x="482" y="88">1929.09.03</text>
+            <text x="482" y="108">381.17</text>
+          </g>
+          <g class="hc-axis">
+            <text x="40" y="322">1928</text>
+            <text x="300" y="322">1929</text>
+            <text x="560" y="322">1930</text>
+          </g>
+          <g class="hc-legend">
+            <path d="M48 34h24"></path><text x="80" y="38">工业</text>
+            <path class="dash" d="M132 34h24"></path><text x="164" y="38">铁路</text>
+          </g>
+        </svg>
+      </div>
+      <div class="panel-foot"><span>汉密尔顿《趋势的反转》</span><span>1929.10.25</span></div>
+    </div>
+    <div class="hero-side-note"><span>阅读提示</span>先读第 6、12、13 章，再回到任意章节。</div>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><i></i></div>
+</section>
+
+<section class="manifesto">
+  <div class="wrap manifesto-inner">
+    <p class="section-no">00 / 写在前面</p>
+    <div>
+      <blockquote class="big-quote reveal">
+        <span class="qmark">“</span>
+        <p>股市不是像一个在风中四处飘飞的气球。总体而言，股市代表了具有远见的和消息灵通的人士，通过严肃认真的周密思考，把股票的价格调整到现有价值，或者在不远的将来所期待的价值。</p>
+        <cite>查尔斯·H·道，1901 年</cite>
+      </blockquote>
+      <div class="manifesto-grid">
+        <p class="reveal">这不是一本教你“预测明天”的书。它讨论的是更慢、也更难的东西：如何辨认一轮主要趋势，如何区分回调与反转，以及如何在两个指数、成交量和时间之间，等待一个足够可靠的确认。</p>
+        <p class="reveal">我们用原书 2013 年珍藏版的扫描页做了逐页 OCR，保留完整正文，并为每一章补写了导读、要点与可交互的图示。文字与原书影印并排呈现，方便你随时回到纸面。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="principles">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-no">01 / 理论精要</p>
+      <div>
+        <h2 class="section-title reveal">六条底层假设，<br>撑起整套方法。</h2>
+        <p class="section-desc reveal">道氏理论不是一套指标组合，而是一组关于市场如何运作的判断。先接受这些前提，后面的章节才有意义。</p>
+      </div>
+    </div>
+    <div class="principles-grid">
+      <article class="principle reveal span-5">
+        <span class="p-no">01</span>
+        <h3>指数消溶一切</h3>
+        <p>价格是所有参与者希望、失望与知识的加权结果。战争、利率、政治、收成，最终都会进入买卖行为。</p>
+        <span class="p-key">DISCOUNT</span>
+      </article>
+      <article class="principle reveal span-7 dark-card">
+        <span class="p-no">02</span>
+        <h3>三种运动同时发生</h3>
+        <p>主要趋势像潮汐，次级反应像波浪，日间波动像涟漪。三者不在同一个时间尺度上，不能混为一谈。</p>
+        <span class="p-key">THREE MOVEMENTS</span>
+      </article>
+      <article class="principle reveal span-4">
+        <span class="p-no">03</span>
+        <h3>两个指数必须确认</h3>
+        <p>工业与铁路，两条腿走路。一个指数的新高或新低，若没有另一个确认，通常是假象。</p>
+        <span class="p-key">CONFIRMATION</span>
+      </article>
+      <article class="principle reveal span-4">
+        <span class="p-no">04</span>
+        <h3>趋势由高低点定义</h3>
+        <p>高点抬高、低点抬高是牛；高点降低、低点降低是熊。趋势持续，直到被明确的反向证据推翻。</p>
+        <span class="p-key">STRUCTURE</span>
+      </article>
+      <article class="principle reveal span-4">
+        <span class="p-no">05</span>
+        <h3>成交量是第二证据</h3>
+        <p>它确认趋势，却不能替代趋势。牛市低量起步、高量收场；回调缩量，往往是健康信号。</p>
+        <span class="p-key">VOLUME</span>
+      </article>
+      <article class="principle reveal span-12 wide-card">
+        <div>
+          <span class="p-no">06</span>
+          <h3>形态不是信号，结构才是</h3>
+          <p>双顶、双底、单根大阳线，都只是市场留下的痕迹。真正决定判断的，是两个指数是否同向、高低点是否被突破。</p>
+        </div>
+        <a class="text-link" href="read/ch16.html">读第 16 章：双顶和双底 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+        <span class="p-key">PATTERN ≠ SIGNAL</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" id="moves">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-no">02 / 三种运动</p>
+      <div>
+        <h2 class="section-title reveal">把噪音，放回它该在的尺度。</h2>
+        <p class="section-desc reveal">同一个星期的下跌，可能是一次日间噪音、一次次级回调，也可能是主要趋势的反转。区别不在幅度，而在结构。</p>
+      </div>
+    </div>
+    <div class="moves-layout">
+      <div class="moves-copy">
+        <div class="move-tabs" role="tablist" aria-label="三种运动">
+          <button class="move-tab is-active" data-layer="primary" role="tab" aria-selected="true"><span>01</span>主要趋势<small>数月到数年</small></button>
+          <button class="move-tab" data-layer="secondary" role="tab" aria-selected="false"><span>02</span>次级反应<small>3 周到数月</small></button>
+          <button class="move-tab" data-layer="daily" role="tab" aria-selected="false"><span>03</span>日间波动<small>小时到数天</small></button>
+        </div>
+        <div class="move-info" id="moveInfo">
+          <p class="move-kicker">PRIMARY / 潮汐</p>
+          <h3>主要趋势</h3>
+          <p>整体向上或向下的运动，也就是牛市或熊市。它决定你应当站在哪一边。道氏理论的大部分工作，都在确认它是否仍在继续。</p>
+          <p class="move-note">“正确地确定主要运动的方向是成功投机的最重要的因素。”</p>
+        </div>
+      </div>
+      <div class="moves-figure">
+        <div class="figure-frame">
+          <svg id="movesSvg" viewBox="0 0 720 480" role="img" aria-label="主要趋势、次级反应与日间波动三层结构示意图">
+            <g class="mv-grid">
+              <path d="M50 80H690M50 180H690M50 280H690M50 380H690M50 450H690"></path>
+              <path d="M50 40V450M210 40V450M370 40V450M530 40V450M690 40V450"></path>
+            </g>
+            <g class="mv-layer" data-layer="daily">
+              <path class="mv-daily" d=""></path>
+            </g>
+            <g class="mv-layer" data-layer="secondary">
+              <path class="mv-secondary" d=""></path>
+            </g>
+            <g class="mv-layer" data-layer="primary">
+              <path class="mv-primary" d=""></path>
+            </g>
+            <g class="mv-labels">
+              <g data-label="primary"><text x="80" y="96">主要趋势</text><text class="sub" x="80" y="114">PRIMARY</text></g>
+              <g data-label="secondary"><text x="420" y="200">次级反应</text><text class="sub" x="420" y="218">SECONDARY</text></g>
+              <g data-label="daily"><text x="440" y="372">日间波动</text><text class="sub" x="440" y="390">DAILY</text></g>
+            </g>
+            <g class="mv-axis"><text x="50" y="474">时间</text><text x="650" y="474" text-anchor="end">价格</text></g>
+          </svg>
+        </div>
+        <p class="figure-caption">示意图：三种运动叠加在同一张价格图上。点击左侧标签，单独查看其中一层。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="phases">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-no">03 / 趋势解剖</p>
+      <div>
+        <h2 class="section-title reveal">牛市和熊市，<br>都有自己的三段式。</h2>
+        <p class="section-desc reveal">阶段不是日历，而是参与者的心理与资金结构。它们会重叠、会提前、会失败，但顺序很少完全颠倒。</p>
+      </div>
+    </div>
+    <div class="phase-head">
+      <div class="phase-tabs" role="tablist" aria-label="牛市与熊市">
+        <button class="phase-tab is-active" data-mode="bull" role="tab" aria-selected="true">牛市 · BULL</button>
+        <button class="phase-tab" data-mode="bear" role="tab" aria-selected="false">熊市 · BEAR</button>
+      </div>
+      <p class="phase-hint" id="phaseHint">信心恢复 → 盈利改善 → 投机狂热</p>
+    </div>
+    <div class="phase-chart-wrap">
+      <svg id="phaseChart" viewBox="0 0 1180 360" role="img" aria-label="牛市与熊市三阶段示意图">
+        <g class="ph-grid"><path d="M60 70H1120M60 150H1120M60 230H1120M60 310H1120"></path></g>
+        <g class="ph-mode" data-mode="bull">
+          <path class="ph-area" d="M60 300C150 294 210 276 270 262C330 248 360 220 420 210C480 200 520 180 585 168C650 156 680 128 750 116C820 104 860 74 930 64C1000 54 1050 44 1120 38V320H60Z"></path>
+          <path class="ph-line" d="M60 300C150 294 210 276 270 262C330 248 360 220 420 210C480 200 520 180 585 168C650 156 680 128 750 116C820 104 860 74 930 64C1000 54 1050 44 1120 38"></path>
+          <g class="ph-dividers"><path d="M420 48V320M750 48V320"></path></g>
+          <g class="ph-labels">
+            <g><text x="150" y="180" class="num">01</text><text x="150" y="210">信心恢复</text><text x="150" y="230" class="sub">价值回归</text></g>
+            <g><text x="500" y="120" class="num">02</text><text x="500" y="150">盈利改善</text><text x="500" y="170" class="sub">最长的一段</text></g>
+            <g><text x="830" y="110" class="num">03</text><text x="830" y="140">投机狂热</text><text x="830" y="160" class="sub">预期支撑价格</text></g>
+          </g>
+        </g>
+        <g class="ph-mode" data-mode="bear" style="display:none">
+          <path class="ph-area" d="M60 60C150 66 210 84 270 98C330 112 360 140 420 150C480 160 520 180 585 192C650 204 680 232 750 244C820 256 860 286 930 296C1000 306 1050 316 1120 322V320H60Z"></path>
+          <path class="ph-line" d="M60 60C150 66 210 84 270 98C330 112 360 140 420 150C480 160 520 180 585 192C650 204 680 232 750 244C820 256 860 286 930 296C1000 306 1050 316 1120 322"></path>
+          <g class="ph-dividers"><path d="M420 48V320M750 48V320"></path></g>
+          <g class="ph-labels">
+            <g><text x="150" y="240" class="num">01</text><text x="150" y="270">希望破灭</text><text x="150" y="290" class="sub">牛市最后一批买盘</text></g>
+            <g><text x="500" y="270" class="num">02</text><text x="500" y="300">景气收缩</text><text x="500" y="320" class="sub">收入下降，卖出增加</text></g>
+            <g><text x="830" y="300" class="num">03</text><text x="830" y="330">被迫清仓</text><text x="830" y="350" class="sub">优质资产也不计价格</text></g>
+          </g>
+        </g>
+        <g class="ph-axis"><text x="60" y="344">时间</text><text x="1110" y="344" text-anchor="end">价格</text></g>
+      </svg>
+    </div>
+    <div class="phase-cards" id="phaseCards">
+      <article class="phase-card"><span>01</span><h3>信心恢复</h3><p>价格从低估中回到公认价值。市场仍然沉闷，坏消息还在，但卖压已经消失。牛市通常不会以激烈波段开始。</p><div class="pc-meta">价值回归 · 低量 · 怀疑</div></article>
+      <article class="phase-card"><span>02</span><h3>盈利改善</h3><p>商业环境好转，盈利数据被价格确认。这是牛市中最长、也最容易出现次级回调的阶段。</p><div class="pc-meta">盈利驱动 · 趋势确认 · 回调</div></article>
+      <article class="phase-card"><span>03</span><h3>投机狂热</h3><p>价格开始由希望和预期支撑。成交量放大，公众广泛参与，优质股的股息率反而不如债券。</p><div class="pc-meta">预期 · 高量 · 派发</div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section confirm-section" id="confirm">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-no">04 / 互相确认</p>
+      <div>
+        <h2 class="section-title reveal">不是预测，<br>而是等待第二票。</h2>
+        <p class="section-desc reveal">工业与铁路，必须同向。一个指数先走一步，可能只是假象；两个指数都确认，趋势才有足够的分量。</p>
+      </div>
+    </div>
+    <div class="confirm-grid">
+      <div class="confirm-panel">
+        <div class="cp-head"><span class="cp-state bad">未确认</span><span class="cp-label">DIVERGENCE</span></div>
+        <svg viewBox="0 0 520 260" role="img" aria-label="工业指数创新高而铁路指数未确认的示意图">
+          <g class="cf-grid"><path d="M30 50H490M30 110H490M30 170H490M30 230H490"></path></g>
+          <path class="cf-line industrial" d="M30 210C80 200 110 180 150 170C190 160 220 130 260 120C300 110 320 78 360 68C400 58 440 56 490 48"></path>
+          <path class="cf-line rail" d="M30 218C80 212 110 196 150 188C190 180 220 158 260 150C300 142 320 132 360 128C400 124 440 132 490 138"></path>
+          <circle class="cf-ring" cx="420" cy="53" r="16"></circle>
+          <text x="385" y="30" class="cf-note bad-text">铁路没有跟随</text>
+          <g class="cf-legend"><path class="industrial" d="M30 244h18"></path><text x="54" y="248">工业</text><path class="rail" d="M110 244h18"></path><text x="134" y="248">铁路</text></g>
+        </svg>
+        <p>一个指数的新高，若没有另一个确认，结论通常是假象。它可能是一次次级反弹，也可能是少数股票制造的错觉。</p>
+      </div>
+      <div class="confirm-panel is-confirmed">
+        <div class="cp-head"><span class="cp-state good">已确认</span><span class="cp-label">CONFIRMATION</span></div>
+        <svg viewBox="0 0 520 260" role="img" aria-label="工业与铁路指数同时创新高的示意图">
+          <g class="cf-grid"><path d="M30 50H490M30 110H490M30 170H490M30 230H490"></path></g>
+          <path class="cf-line industrial" d="M30 210C80 200 110 180 150 170C190 160 220 130 260 120C300 110 320 78 360 68C400 58 440 54 490 42"></path>
+          <path class="cf-line rail" d="M30 218C80 210 110 192 150 184C190 176 220 150 260 142C300 134 320 108 360 98C400 88 440 82 490 70"></path>
+          <circle class="cf-ring good-ring" cx="455" cy="49" r="16"></circle>
+          <text x="392" y="28" class="cf-note good-text">两个指数同时确认</text>
+          <g class="cf-legend"><path class="industrial" d="M30 244h18"></path><text x="54" y="248">工业</text><path class="rail" d="M110 244h18"></path><text x="134" y="248">铁路</text></g>
+        </svg>
+        <p>两个指数同向突破，趋势才被确认。确认不要求同一天发生，但方向最终必须一致；一旦确认，趋势会持续到被反向证据推翻。</p>
+      </div>
+    </div>
+    <div class="confirm-rule reveal">
+      <span class="cr-label">一条可以随身携带的规则</span>
+      <p>一个指数的新高或新低，若没有另一个指数的确认，先把它当作<em>疑问</em>，而不是<em>结论</em>。</p>
+      <a href="read/ch12.html">读第 12 章 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="section chapters-section" id="chapters">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-no">05 / 章节目录</p>
+      <div>
+        <h2 class="section-title reveal">十九个章节，<br>一条完整的推理链。</h2>
+        <p class="section-desc reveal">从源流、假设，到趋势、确认、形态与纪律。带红点的五章，是理解整套方法的最短路径。</p>
+      </div>
+    </div>
+    <div class="chapter-grid">
+      <a class="chapter-card reveal" href="read/ch01.html" style="--i:1">
+  <div class="cc-top"><span class="cc-no">01</span><span class="cc-tag">源流</span></div>
+  <h3>道氏理论的演变</h3>
+  <p>从道的观察到汉密尔顿的体系，再到雷亚的整理。</p>
+  <div class="cc-foot"><span>10 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" href="read/ch02.html" style="--i:2">
+  <div class="cc-top"><span class="cc-no">02</span><span class="cc-tag">总纲</span></div>
+  <h3>汉密尔顿阐述的道氏理论</h3>
+  <p>把散落在评论里的方法，整理成一组可以逐条检验的假设。</p>
+  <div class="cc-foot"><span>8 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" href="read/ch03.html" style="--i:3">
+  <div class="cc-top"><span class="cc-no">03</span><span class="cc-tag">边界</span></div>
+  <h3>市场操纵</h3>
+  <p>日间波动可以被推动，主要趋势却不能被人为制造。</p>
+  <div class="cc-foot"><span>4 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" href="read/ch04.html" style="--i:4">
+  <div class="cc-top"><span class="cc-no">04</span><span class="cc-tag">假设</span></div>
+  <h3>平均价格指数消溶一切</h3>
+  <p>价格不是对过去的记录，而是对未来的集体预期。</p>
+  <div class="cc-foot"><span>9 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" href="read/ch05.html" style="--i:0">
+  <div class="cc-top"><span class="cc-no">05</span><span class="cc-tag">谦逊</span></div>
+  <h3>道氏理论并非总是正确</h3>
+  <p>它是一门像外科手术一样的实践技艺，而不是一台预测机器。</p>
+  <div class="cc-foot"><span>9 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" data-core="true" href="read/ch06.html" style="--i:1">
+  <div class="cc-top"><span class="cc-no">06</span><span class="cc-tag">结构</span></div>
+  <h3>道氏的三种运动</h3>
+  <p>潮汐、波浪与涟漪：三种运动同时发生，却不在同一个尺度上。</p>
+  <div class="cc-foot"><span>5 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" href="read/ch07.html" style="--i:2">
+  <div class="cc-top"><span class="cc-no">07</span><span class="cc-tag">趋势</span></div>
+  <h3>主要运动</h3>
+  <p>方向比点位重要，持续时间无法被精确预测。</p>
+  <div class="cc-foot"><span>3 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" href="read/ch08.html" style="--i:3">
+  <div class="cc-top"><span class="cc-no">08</span><span class="cc-tag">熊市</span></div>
+  <h3>熊市</h3>
+  <p>希望破灭、景气收缩、被迫清仓：熊市的三段式。</p>
+  <div class="cc-foot"><span>8 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" href="read/ch09.html" style="--i:4">
+  <div class="cc-top"><span class="cc-no">09</span><span class="cc-tag">牛市</span></div>
+  <h3>牛市</h3>
+  <p>信心恢复、盈利改善、投机狂热：牛市也会分三段走。</p>
+  <div class="cc-foot"><span>11 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" href="read/ch10.html" style="--i:0">
+  <div class="cc-top"><span class="cc-no">10</span><span class="cc-tag">回调</span></div>
+  <h3>次级反应运动</h3>
+  <p>趋势的安全阀，也是最容易被误认为反转的那一段。</p>
+  <div class="cc-foot"><span>17 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" href="read/ch11.html" style="--i:1">
+  <div class="cc-top"><span class="cc-no">11</span><span class="cc-tag">噪音</span></div>
+  <h3>日间波动</h3>
+  <p>单日波动不是信号，除非它最终拼成一个形态。</p>
+  <div class="cc-foot"><span>2 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" data-core="true" href="read/ch12.html" style="--i:2">
+  <div class="cc-top"><span class="cc-no">12</span><span class="cc-tag">确认</span></div>
+  <h3>两个平均价格指数必须互相确认</h3>
+  <p>工业与铁路，两条腿走路；一条腿迈出去，不算前进。</p>
+  <div class="cc-foot"><span>9 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" data-core="true" href="read/ch13.html" style="--i:3">
+  <div class="cc-top"><span class="cc-no">13</span><span class="cc-tag">判定</span></div>
+  <h3>确定趋势</h3>
+  <p>高点抬高、低点抬高是牛；高点降低、低点降低是熊。</p>
+  <div class="cc-foot"><span>4 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" data-core="true" href="read/ch14.html" style="--i:4">
+  <div class="cc-top"><span class="cc-no">14</span><span class="cc-tag">形态</span></div>
+  <h3>线态窄幅区间盘整</h3>
+  <p>沉默的横盘区，往往比一根大阳线说了更多。</p>
+  <div class="cc-foot"><span>10 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" data-core="true" href="read/ch15.html" style="--i:0">
+  <div class="cc-top"><span class="cc-no">15</span><span class="cc-tag">量价</span></div>
+  <h3>成交量与价格运动的关系</h3>
+  <p>成交量是燃料表，不是方向盘；它确认趋势，不能替代趋势。</p>
+  <div class="cc-foot"><span>9 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" href="read/ch16.html" style="--i:1">
+  <div class="cc-top"><span class="cc-no">16</span><span class="cc-tag">形态</span></div>
+  <h3>双顶和双底</h3>
+  <p>市场喜欢画“双顶”，但真正的顶底很少按图施工。</p>
+  <div class="cc-foot"><span>4 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" href="read/ch17.html" style="--i:2">
+  <div class="cc-top"><span class="cc-no">17</span><span class="cc-tag">个股</span></div>
+  <h3>个股</h3>
+  <p>先看潮汐，再看船；大多数个股游不出大盘的方向。</p>
+  <div class="cc-foot"><span>3 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" href="read/ch18.html" style="--i:3">
+  <div class="cc-top"><span class="cc-no">18</span><span class="cc-tag">纪律</span></div>
+  <h3>投机交易</h3>
+  <p>投机是一门生意：需要研究、耐心、止损与独立判断。</p>
+  <div class="cc-foot"><span>10 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card reveal" href="read/ch19.html" style="--i:4">
+  <div class="cc-top"><span class="cc-no">19</span><span class="cc-tag">哲学</span></div>
+  <h3>股市哲学</h3>
+  <p>汉密尔顿的边角料，往往比正式理论更接近市场。</p>
+  <div class="cc-foot"><span>10 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a><a class="chapter-card chapter-card-cta reveal" href="read/ch01.html">
+  <div class="cc-top"><span class="cc-no">START</span><span class="cc-tag">阅读</span></div>
+  <h3>从第一章<br>开始阅读</h3>
+  <p>19 章全文、章节导读、原书影印与全文检索。</p>
+  <div class="cc-foot"><span>约 8 分钟</span><span class="cc-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></span></div>
+</a>
+    </div>
+  </div>
+</section>
+
+<section class="section gallery-section" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-no">06 / 原书图谱</p>
+      <div>
+        <h2 class="section-title reveal">纸面上的证据。</h2>
+        <p class="section-desc reveal">熊市底部的九组走势、三十五年统计表、被旋转印刷的附录。图表是雷亚的论据，也是这本书的时间胶囊。</p>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <figure class="g-item g-large reveal" data-lightbox data-src="assets/pages/070.webp" data-caption="道·琼斯平均价格指数：9 个熊市的 6 个月谷底（原书 p.62）">
+        <img src="assets/pages/070.webp" alt="原书第62页：9个熊市底部的走势对照图">
+        <figcaption><span>FIG. 01</span><b>9 个熊市的谷底</b><small>原书 p.62</small></figcaption>
+      </figure>
+      <figure class="g-item reveal" data-lightbox data-src="assets/pages/106.webp" data-caption="牛市：道·琼斯工业股票平均价格指数统计表（原书 p.98）">
+        <img src="assets/pages/106.webp" alt="原书第98页：牛市趋势与次级反应统计表">
+        <figcaption><span>FIG. 02</span><b>三十五年的统计</b><small>原书 p.98</small></figcaption>
+      </figure>
+      <figure class="g-item reveal" data-lightbox data-src="assets/pages/109.webp" data-caption="次级反应统计续表（原书 p.101）">
+        <img src="assets/pages/109.webp" alt="原书第101页：次级反应统计续表">
+        <figcaption><span>FIG. 03</span><b>回调的刻度</b><small>原书 p.101</small></figcaption>
+      </figure>
+      <figure class="g-item g-large reveal" data-lightbox data-src="assets/pages/009.webp" data-caption="原书章节扉页：第1章 道氏理论的演变">
+        <img src="assets/pages/009.webp" alt="原书章节扉页">
+        <figcaption><span>FIG. 04</span><b>章节扉页</b><small>原书 p.1</small></figcaption>
+      </figure>
+    </div>
+    <p class="gallery-note">点击任意图片查看大图。各章正文影印页已放入对应阅读页，可在页面底部“原书影印”中翻阅。</p>
+  </div>
+</section>
+
+<section class="section timeline-section" id="timeline">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-no">07 / 时间线</p>
+      <div>
+        <h2 class="section-title reveal">从道的时代，<br>到雷亚的书桌。</h2>
+        <p class="section-desc reveal">这套理论不是一次发明的。它经过两代人的观察、误判、修正，最后在 1932 年的大萧条底部被写成书。</p>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-scroller">
+    <ol class="timeline">
+      <li class="tl-item reveal"><span class="tl-year">1851</span><div class="tl-dot"></div><h3>查尔斯·H·道出生</h3><p>从报纸编辑到道琼斯公司的创办者。</p></li>
+<li class="tl-item reveal"><span class="tl-year">1882</span><div class="tl-dot"></div><h3>道琼斯公司成立</h3><p>两年后，《华尔街日报》创刊。</p></li>
+<li class="tl-item reveal"><span class="tl-year">1896</span><div class="tl-dot"></div><h3>道琼斯工业平均指数问世</h3><p>最初只有 12 只股票；1897 年分为铁路与工业两组。</p></li>
+<li class="tl-item reveal"><span class="tl-year">1902</span><div class="tl-dot"></div><h3>道去世，理论得名</h3><p>尼尔森在《股票投机常识》中首次提出“道氏理论”。</p></li>
+<li class="tl-item reveal"><span class="tl-year">1922</span><div class="tl-dot"></div><h3>《股市晴雨表》出版</h3><p>汉密尔顿把二十多年的评论整理成书。</p></li>
+<li class="tl-item reveal"><span class="tl-year">1929</span><div class="tl-dot"></div><h3>最后的判断</h3><p>10 月 25 日《趋势的反转》；汉密尔顿于年底去世。</p></li>
+<li class="tl-item reveal"><span class="tl-year">1932</span><div class="tl-dot"></div><h3>雷亚写下这本书</h3><p>同年，美股在深渊中触底。</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section about-section" id="about">
+  <div class="wrap about-grid">
+    <figure class="about-cover reveal">
+      <img src="assets/img/cover.webp" alt="《道氏理论（珍藏版）》封面">
+      <figcaption>地震出版社 · 2013 年珍藏版</figcaption>
+    </figure>
+    <div class="about-copy">
+      <p class="section-no">08 / 关于这本书</p>
+      <h2 class="reveal">一本写在大萧条底部的书，<br>却试图解释整条潮汐。</h2>
+      <p class="reveal">罗伯特·雷亚（Robert Rhea）长期卧病，却把全部精力用于研究市场。他在 1932 年写下这本书，把道与汉密尔顿的观察整理成一套可以学习、可以练习、也可以失败的方法。</p>
+      <p class="reveal">本网站以地震出版社 2013 年刘志刚译本为底本，逐页 OCR 整理。原书为扫描版，文字中可能残留少量形近字识别误差；每章都保留影印页，方便对照。</p>
+      <div class="about-facts">
+        <div><span>作者</span><b>罗伯特·雷亚</b></div>
+        <div><span>译者</span><b>刘志刚</b></div>
+        <div><span>底本</span><b>2013 年珍藏版</b></div>
+        <div><span>整理</span><b>OCR + 逐章整理</b></div>
+      </div>
+      <a class="btn btn-primary" href="read/ch01.html">从第一章开始 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="wrap cta-inner">
+    <p class="cta-kicker">START READING</p>
+    <h2>潮汐不会解释自己。<br><span>但你可以学会看。</span></h2>
+    <div class="cta-actions">
+      <a class="btn btn-light" href="read/ch01.html">开始阅读 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"></path></svg></a>
+      <a class="btn btn-outline-light" href="read/ch06.html">先读第 6 章</a>
+    </div>
+    <div class="cta-links">
+      <a href="read/ch12.html">12 / 两个指数必须确认</a>
+      <a href="read/ch13.html">13 / 确定趋势</a>
+      <a href="read/ch14.html">14 / 线态窄幅区间盘整</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <a class="brand" href="dow.html" aria-label="道氏理论 · 首页">
+  <span class="brand-mark">道</span>
+  <span class="brand-text"><strong>道氏理论</strong><small>THE DOW THEORY</small></span>
+</a>
+      <p class="footer-note">一个关于趋势、确认与纪律的数字读本。<br>内容仅供个人学习研究，原书版权归作者、译者与出版社所有。</p>
+    </div>
+    <div class="footer-links">
+      <div><span>阅读</span><a href="library.html">交易书库</a><a href="concepts.html">概念索引</a><a href="read/ch01.html">第一章</a></div>
+      <div><span>索引</span><a href="#principles">理论精要</a><a href="#moves">三种运动</a><a href="#timeline">时间线</a></div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom"><span>道氏理论 · THE DOW THEORY · 1932</span><span>Made for reading, not predicting.</span></div>
+</footer>
+
+<dialog class="search-dialog" id="searchDialog">
+  <div class="search-box">
+    <div class="search-top">
+      <label class="search-field">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path></svg>
+        <input id="searchInput" type="search" placeholder="搜索章节、概念或一句话…" autocomplete="off" aria-label="搜索全书">
+        <kbd>ESC</kbd>
+      </label>
+      <button class="dialog-close" data-search-close aria-label="关闭搜索">×</button>
+    </div>
+    <div class="search-meta"><span id="searchCount">输入关键词，检索 19 章全文</span><span>支持中文与数字</span></div>
+    <div class="search-results" id="searchResults">
+      <div class="search-empty"><span>⌕</span><p>试试“确认”“次级反应”“成交量”或“1929”。</p></div>
+    </div>
+  </div>
+</dialog>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" aria-label="关闭">×</button>
+  <img id="lbImage" alt="">
+  <p id="lbCaption"></p>
+</div>
+
+<script src="assets/js/search-data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
