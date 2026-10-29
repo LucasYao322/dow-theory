@@ -9,10 +9,8 @@
 
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
   var W = 0, H = 0, fontSize = 0, fontSizeMobile = false;
-  var guide = null, targets = [], particles = [];
-  var mouse = null, active = false, settling = false, leaving = false;
+  var particles = [], mouse = null, active = false, settling = false, leaving = false;
   var frame = 0, start = 0, lastMove = 0;
-  var FONT = "Arial, Helvetica, sans-serif";
 
   function resizeCanvas() {
     W = window.innerWidth;
@@ -40,13 +38,13 @@
     fontSize = Math.min(H * 0.19, W * 0.125);
     if (fontSizeMobile) fontSize = Math.min(H * 0.075, W * 0.16);
     var layout = fontSizeMobile ? ["READ", "THE MARKET.", "THEN", "TRADE."] : ["READ", "THE MARKET.", "THEN TRADE."];
-    octx.font = "800 " + fontSize + "px " + FONT;
+    octx.font = "900 " + fontSize + "px Helvetica Neue, Helvetica, Arial, sans-serif";
     var maxWidth = W * (fontSizeMobile ? 0.94 : 0.68);
     var widest = 0;
     layout.forEach(function (line) { widest = Math.max(widest, octx.measureText(line).width); });
     if (widest > maxWidth) {
       fontSize *= maxWidth / widest;
-      octx.font = "800 " + fontSize + "px " + FONT;
+      octx.font = "900 " + fontSize + "px Helvetica Neue, Helvetica, Arial, sans-serif";
     }
 
     var lineHeight = fontSize * (fontSizeMobile ? 1.10 : 1.04);
@@ -56,18 +54,16 @@
       octx.fillText(line, W / 2, top + i * lineHeight);
     });
 
-    guide = off;
-    targets = [];
     var data = octx.getImageData(0, 0, W, H).data;
-    var step = fontSizeMobile ? 2 : Math.max(2, Math.round(fontSize / 64));
-    for (var y = 0; y < H; y += step) {
-      for (var x = 0; x < W; x += step) {
+    var targets = [];
+    for (var y = 0; y < H; y++) {
+      for (var x = 0; x < W; x++) {
         if (data[(y * W + x) * 4 + 3] > 120) {
           targets.push({ x: x, y: y });
         }
       }
     }
-    var cap = fontSizeMobile ? 9000 : 11000;
+    var cap = fontSizeMobile ? 22000 : 48000;
     if (targets.length > cap) {
       var keep = [];
       var stride = targets.length / cap;
@@ -75,32 +71,33 @@
       targets = keep;
     }
 
-    particles = [];
-    active = false;
-    settling = false;
-    drawSolid();
-  }
-
-  function drawSolid() {
-    if (!guide) return;
-    ctx.clearRect(0, 0, W, H);
-    ctx.globalAlpha = 1;
-    ctx.drawImage(guide, 0, 0, W, H);
-  }
-
-  function activate() {
-    if (active || settling || leaving || !targets.length) return;
-    active = true;
-    settling = false;
     particles = targets.map(function (t) {
       return {
         x: t.x, y: t.y, tx: t.x, ty: t.y,
         vx: 0, vy: 0,
-        size: (fontSizeMobile ? 0.45 : 0.55) + Math.random() * (fontSizeMobile ? 0.9 : 1.5),
-        alpha: 0.55 + Math.random() * 0.45,
-        gold: Math.random() < 0.045
+        size: (fontSizeMobile ? 0.9 : 1.1) + Math.random() * (fontSizeMobile ? 1.2 : 1.5)
       };
     });
+    active = false;
+    settling = false;
+    if (frame) { cancelAnimationFrame(frame); frame = 0; }
+    draw();
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = "#f2ede2";
+    ctx.globalAlpha = 0.96;
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      ctx.fillRect(p.x, p.y, p.size, p.size);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function activate() {
+    if (active || settling || leaving || !particles.length) return;
+    active = true;
     lastMove = performance.now();
     start = lastMove;
     if (!frame) frame = requestAnimationFrame(loop);
@@ -112,41 +109,38 @@
     settling = true;
   }
 
-  function finishSolid() {
+  function finish() {
     settling = false;
-    particles = [];
-    drawSolid();
+    draw();
     if (frame) cancelAnimationFrame(frame);
     frame = 0;
   }
 
   function loop(ts) {
-    if (!active && !settling && !leaving) { finishSolid(); return; }
+    if (!active && !settling && !leaving) { finish(); return; }
     frame = requestAnimationFrame(loop);
     var now = ts || performance.now();
-    ctx.clearRect(0, 0, W, H);
     var maxDist = 0;
-
     for (var i = 0; i < particles.length; i++) {
       var p = particles[i];
       if (leaving) {
         p.x += p.vx;
         p.y += p.vy;
         p.vx *= 0.99;
-        p.vy = p.vy * 0.99 + 0.14;
+        p.vy = p.vy * 0.99 + 0.18;
       } else {
         if (active && mouse) {
           var mdx = p.x - mouse.x;
           var mdy = p.y - mouse.y;
           var md = Math.sqrt(mdx * mdx + mdy * mdy);
-          if (md < 190 && md > 0.1) {
-            var force = (1 - md / 190);
-            p.vx += (mdx / md) * force * 2.0 + (-mdy / md) * force * 0.75;
-            p.vy += (mdy / md) * force * 2.0 + (mdx / md) * force * 0.75;
+          if (md < 210 && md > 0.1) {
+            var force = (1 - md / 210);
+            p.vx += (mdx / md) * force * 2.6 + (-mdy / md) * force * 0.8;
+            p.vy += (mdy / md) * force * 2.6 + (mdx / md) * force * 0.8;
           }
         }
-        var spring = active ? 0.012 : 0.05;
-        var damp = active ? 0.94 : 0.86;
+        var spring = active ? 0.014 : 0.052;
+        var damp = active ? 0.93 : 0.84;
         p.vx += (p.tx - p.x) * spring;
         p.vy += (p.ty - p.y) * spring;
         p.vx *= damp;
@@ -156,16 +150,10 @@
         var dist = Math.abs(p.tx - p.x) + Math.abs(p.ty - p.y);
         if (dist > maxDist) maxDist = dist;
       }
-      ctx.globalAlpha = p.alpha * (leaving ? 0.75 : 0.95);
-      ctx.fillStyle = p.gold ? "rgba(201,168,106,0.95)" : "rgba(242,237,226,0.95)";
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fill();
     }
-    ctx.globalAlpha = 1;
-
+    draw();
     if (active && now - lastMove > 700) settle();
-    if (settling && maxDist < 1.4) finishSolid();
+    if (settling && maxDist < 0.9) finish();
   }
 
   function enter(e) {
@@ -176,7 +164,6 @@
     active = false;
     settling = false;
     document.body.classList.add("is-leaving");
-    start = performance.now();
     particles.forEach(function (p) {
       var dx = p.x - W / 2;
       var dy = p.y - H / 2;
@@ -190,20 +177,14 @@
 
   window.addEventListener("pointermove", function (e) {
     mouse = { x: e.clientX, y: e.clientY };
-    if (!active && !settling && !leaving) {
-      activate();
-    } else if (settling && !leaving) {
-      active = true;
-      settling = false;
-    }
+    if (!active && !settling && !leaving) activate();
+    else if (settling && !leaving) { active = true; settling = false; }
     lastMove = performance.now();
   }, { passive: true });
   window.addEventListener("pointerleave", function () { mouse = null; settle(); }, { passive: true });
   window.addEventListener("resize", function () {
     clearTimeout(window.__introResize);
-    window.__introResize = setTimeout(function () {
-      if (!leaving) resizeCanvas();
-    }, 160);
+    window.__introResize = setTimeout(function () { if (!leaving) resizeCanvas(); }, 160);
   }, { passive: true });
   Array.prototype.forEach.call(document.querySelectorAll("[data-intro-enter]"), function (a) {
     a.addEventListener("click", function (e) { e.stopPropagation(); enter(e); });
@@ -221,5 +202,5 @@
   } else {
     resizeCanvas();
   }
-  setTimeout(function () { if (!guide) resizeCanvas(); }, 700);
+  setTimeout(function () { if (!particles.length) resizeCanvas(); }, 700);
 })();
