@@ -9,7 +9,7 @@
 
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
   var W = 0, H = 0, fontSize = 0, fontSizeMobile = false;
-  var guide = null, grain = null, targets = [], particles = [];
+  var guide = null, targets = [], particles = [];
   var mouse = null, active = false, settling = false, leaving = false;
   var frame = 0, start = 0, lastMove = 0;
   var FONT = "Arial, Helvetica, sans-serif";
@@ -41,7 +41,7 @@
     if (fontSizeMobile) fontSize = Math.min(H * 0.075, W * 0.16);
     var layout = fontSizeMobile ? ["READ", "THE MARKET.", "THEN", "TRADE."] : ["READ", "THE MARKET.", "THEN TRADE."];
     octx.font = "800 " + fontSize + "px " + FONT;
-    var maxWidth = W * (fontSizeMobile ? 0.94 : 0.66);
+    var maxWidth = W * (fontSizeMobile ? 0.94 : 0.68);
     var widest = 0;
     layout.forEach(function (line) { widest = Math.max(widest, octx.measureText(line).width); });
     if (widest > maxWidth) {
@@ -57,19 +57,6 @@
     });
 
     guide = off;
-    grain = document.createElement("canvas");
-    grain.width = W;
-    grain.height = H;
-    var gctx = grain.getContext("2d");
-    gctx.drawImage(off, 0, 0);
-    gctx.globalCompositeOperation = "source-atop";
-    gctx.fillStyle = "rgba(8, 9, 8, 0.28)";
-    for (var n = 0; n < 16000; n++) {
-      gctx.beginPath();
-      gctx.arc(Math.random() * W, Math.random() * H, 0.45 + Math.random() * 0.7, 0, Math.PI * 2);
-      gctx.fill();
-    }
-    gctx.globalCompositeOperation = "source-over";
     targets = [];
     var data = octx.getImageData(0, 0, W, H).data;
     var step = fontSizeMobile ? 2 : Math.max(2, Math.round(fontSize / 64));
@@ -95,10 +82,10 @@
   }
 
   function drawSolid() {
-    if (!grain) return;
+    if (!guide) return;
     ctx.clearRect(0, 0, W, H);
     ctx.globalAlpha = 1;
-    ctx.drawImage(grain, 0, 0, W, H);
+    ctx.drawImage(guide, 0, 0, W, H);
   }
 
   function activate() {
