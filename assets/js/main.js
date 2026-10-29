@@ -292,3 +292,16 @@
     });
   }
 })();
+
+/* Lazy-load the sand cursor layer on non-reader pages. */
+(function () {
+  if (window.__sandLoader) return;
+  window.__sandLoader = true;
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var script = document.currentScript;
+  if (!script) return;
+  var el = document.createElement("script");
+  el.src = new URL("sand.js", script.src).href;
+  el.async = true;
+  document.head.appendChild(el);
+})();

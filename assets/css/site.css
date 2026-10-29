@@ -3462,3 +3462,17 @@ body.theme-dark .pg {
 .toc-item { font-size: 12.5px; }
 
 @media (max-width: 1180px) { .head-cta-library { display: none; } }
+
+/* Sand cursor overlay */
+body { --sand-color: rgba(112, 83, 48, 0.55); }
+.turtle-landing,
+.speculator-landing,
+.soros-landing { --sand-color: rgba(243, 238, 226, 0.62); }
+.sand-cursor {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 45;
+}
