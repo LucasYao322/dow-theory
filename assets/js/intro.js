@@ -36,11 +36,11 @@
     octx.textAlign = "center";
     octx.textBaseline = "middle";
 
-    fontSize = Math.min(H * 0.205, W * 0.145);
+    fontSize = Math.min(H * 0.19, W * 0.125);
     if (fontSizeMobile) fontSize = Math.min(H * 0.075, W * 0.16);
     var layout = fontSizeMobile ? ["READ", "THE MARKET.", "THEN", "TRADE."] : ["READ", "THE MARKET.", "THEN TRADE."];
     octx.font = "800 " + fontSize + "px " + FONT;
-    var maxWidth = W * (fontSizeMobile ? 0.94 : 0.84);
+    var maxWidth = W * (fontSizeMobile ? 0.94 : 0.66);
     var widest = 0;
     layout.forEach(function (line) { widest = Math.max(widest, octx.measureText(line).width); });
     if (widest > maxWidth) {
